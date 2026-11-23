@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebLearnx | Web Technology Portal (CS35302) — Saket Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loader"><div class="spinner"></div><div class="loader-text">LOADING, JUST A SEC...</div></div>
+    <div id="fireworks-container"></div>
+    <div class="bg-animation"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+    <!-- Top Reading Progress Bar -->
+    <div id="readingProgressBar"></div>
+
+    <header>
+        <a href="#home" class="brand-wrap" id="brandLogo" title="WebLearnx by Saket Kumar — Go to Home">
+            <span class="logo">WebLearnx</span>
+            <span class="brand-author">Saket Kumar</span>
+        </a>
+        <div class="header-right">
+            <nav id="mainNav">
+                <a href="#home" class="nav-link" data-target="home">Home</a>
+                <a href="#syllabus" class="nav-link" data-target="syllabus">Syllabus</a>
+                <a href="#notes-hub" class="nav-link" data-target="notes-hub">Notes</a>
+                <a href="#tutorials-hub" class="nav-link" data-target="tutorials-hub">Tutorials</a>
+                <a href="#handwritten-notes" class="nav-link" data-target="handwritten-notes">Handwritten Notes</a>
+                <a href="#assignments" class="nav-link" data-target="assignments">Assignments</a>
+                <a href="#practice" class="nav-link" data-target="practice">Practice Mode</a>
+                <a href="#about" class="nav-link" data-target="about">About</a>
+                <div class="nav-dropdown" id="moreDropdown">
+                    <button type="button" class="nav-link nav-dropdown-toggle" id="moreDropdownBtn" data-target="more" aria-haspopup="true" aria-expanded="false" onclick="toggleMoreDropdown(event)">
+                        More <span class="dropdown-caret">▾</span>
+                    </button>
+                    <div class="nav-dropdown-menu" id="moreDropdownMenu" role="menu">
+                        <a href="#features" class="dropdown-item" data-target="features" onclick="closeMoreDropdown(); closeMobileMenu();">
+                            <span class="dd-icon">✨</span>
+                            <span><strong>Features &amp; Diagrams</strong><small>Portal architecture &amp; guide</small></span>
+                        </a>
+                        <a href="#revision" class="dropdown-item" data-target="revision" onclick="closeMoreDropdown(); closeMobileMenu();">
+                            <span class="dd-icon">⚡</span>
+                            <span><strong>Quick Revision &amp; Flashcards</strong><small>3D flip cards, 34 full forms</small></span>
+                        </a>
+                        <a href="#tut-exam" class="dropdown-item" data-target="tut-exam" onclick="closeMoreDropdown(); closeMobileMenu();">
+                            <span class="dd-icon">🎯</span>
+                            <span><strong>Important Exam Points</strong><small>High-yield tutorial topics</small></span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <button type="button" class="dropdown-item" onclick="closeMoreDropdown(); closeMobileMenu(); openShortcutsModal();">
+                            <span class="dd-icon">⌨️</span>
+                            <span><strong>Keyboard Shortcuts</strong><small>Ctrl+K, 1–4, Arrow keys</small></span>
+                        </button>
+                        <button type="button" class="dropdown-item" onclick="closeMoreDropdown(); closeMobileMenu(); window.print();">
+                            <span class="dd-icon">🖨️</span>
+                            <span><strong>Print Current Page</strong><small>Save as PDF or print notes</small></span>
+                        </button>
+                        <button type="button" class="dropdown-item danger" onclick="closeMoreDropdown(); closeMobileMenu(); openResetAccountModal();">
+                            <span class="dd-icon">🔄</span>
+                            <span><strong>Reset Account &amp; Data</strong><small>Reset dashboard, tests &amp; notes</small></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <button type="button" class="icon-action-btn" id="openSearchBtn" onclick="openSearchModal()" title="Search Notes & Tutorials (Ctrl+K)" aria-label="Search">🔍</button>
+                <button type="button" class="theme-toggle" id="themeToggleBtn" onclick="toggleThemeMode()" title="Toggle Dark/Bright Mode" aria-label="Toggle Dark/Bright Mode">🌙</button>
+                <button class="menu-toggle" id="menuToggleBtn" title="Toggle Navigation Menu" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-container">
+
+        <!-- ================= HOME ================= -->
+        <div id="home" class="page">
+            <div class="home-content">
+                <div class="hero-brand-title">WebLearnx</div>
+                <div class="home-badge">Saket Kumar &nbsp;|&nbsp; QID: 24031053 &nbsp;|&nbsp; Quantum University, Roorkee &nbsp;|&nbsp; Web Technology (CS35302)</div>
+                <div class="typing-container"><span id="typewriter"></span><span class="cursor"></span></div>
+                <p class="home-subtitle">Welcome to <strong>WebLearnx</strong> — your complete Web Technology (CS35302) learning portal. Access full Unit 1–5 Notes with visual architecture diagrams, uncompressed &amp; handwritten Tutorials 1–5, LMS Assignments, and timed Practice Tests.</p>
+                <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+                    <a href="#notes-hub" class="nav-link" style="font-size:1.02rem; padding:13px 28px;">Explore Unit Notes</a>
+                    <a href="#tutorials-hub" class="nav-link" style="font-size:1.02rem; padding:13px 28px;">Open Tutorials</a>
+                    <a href="#handwritten-notes" class="nav-link" style="font-size:1.02rem; padding:13px 28px; border-color: var(--accent); color: var(--accent);">✍️ Handwritten Notes</a>
+                    <a href="#practice" class="nav-link" style="font-size:1.02rem; padding:13px 28px;">Start Practice Mode</a>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-bar">
+                <div class="stat-card">
+                    <div class="stat-num">5 Units</div>
+                    <div class="stat-label">Complete Syllabus Notes &amp; Diagrams</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">5 Tutorials</div>
+                    <div class="stat-label">Full Solved Q&amp;A with Code Examples</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">2 Assignments</div>
+                    <div class="stat-label">LMS-Style Graded Assessments</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">Timed Quiz</div>
+                    <div class="stat-label">Live Palette, Timer &amp; Accuracy Report</div>
+                </div>
+            </div>
+
+            <!-- Live Study Progress, Reset Account & IST Clock Bar -->
+            <div class="study-dashboard-strip">
+                <div class="study-progress-box">
+                    <div class="study-progress-top">
+                        <span>📈 <strong>Your CS35302 Study Progress</strong></span>
+                        <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                            <span id="studyProgressText" style="color: var(--primary); font-weight: 700;">0 / 10 Completed (0%)</span>
+                            <button type="button" class="reset-account-btn" onclick="openResetAccountModal()" title="Reset all progress, tests, assignments & highlights">
+                                🔄 Reset Account
+                            </button>
+                        </div>
+                    </div>
+                    <div class="study-progress-track">
+                        <div class="study-progress-fill" id="studyProgressFill" style="width: 0%;"></div>
+                    </div>
+                </div>
+                <div class="live-clock-box">
+                    <span class="clock-label">Live IST Clock</span>
+                    <strong id="liveIstClock">--:--:-- --</strong>
+                </div>
+            </div>
+
+            <!-- Portal Features Section -->
+            <div class="section-heading">
+                <h2>What Makes <span class="text-gradient">WebLearnx</span> Different?</h2>
+                <p>Click any card below to experience how fast and effortless Web Technology exam prep can be.</p>
+            </div>
+
+            <div class="features-grid">
+                <a href="#syllabus" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">🗺️</span>
+                        <span class="feature-tag accent">Official Roadmap</span>
+                    </div>
+                    <h3>Complete CS35302 Syllabus</h3>
+                    <p>Never wonder what is in the exam. View the official Quantum University 5th-semester syllabus with unit-wise hours and jump straight into any topic.</p>
+                    <span class="feature-cta">Check Official Syllabus ➔</span>
+                </a>
+
+                <a href="#notes-hub" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">🧠</span>
+                        <span class="feature-tag">Visual Learning</span>
+                    </div>
+                    <h3>See Concepts, Don't Just Read Them</h3>
+                    <p>Complex protocols like HTTP, DNS, SOAP, AJAX, CORBA, MVC, and IoT are broken down with crisp flow diagrams so you remember them in seconds.</p>
+                    <span class="feature-cta">Explore Visual Notes ➔</span>
+                </a>
+
+                <a href="#tutorials-hub" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">💡</span>
+                        <span class="feature-tag">100% Uncompressed</span>
+                    </div>
+                    <h3>Solved Tutorials Ready to Write</h3>
+                    <p>Every single question from Tutorials 1 to 5—complete with side-by-side comparison tables, working code snippets, and exam-ready conclusions.</p>
+                    <span class="feature-cta">Open Solved Tutorials ➔</span>
+                </a>
+
+                <a href="#assignments" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">🎯</span>
+                        <span class="feature-tag accent">Real LMS Feel</span>
+                    </div>
+                    <h3>Submit Like a Real University Portal</h3>
+                    <p>No accidental half-submissions. Answer all questions, lock in your submission, and click View Results to unlock your grade and answer breakdown.</p>
+                    <span class="feature-cta">Try an Assignment ➔</span>
+                </a>
+
+                <a href="#practice" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">🔥</span>
+                        <span class="feature-tag accent">Beat The Clock</span>
+                    </div>
+                    <h3>Can You Beat the 5-Minute Timer?</h3>
+                    <p>Test your speed with a live color-coded Question Palette, Mark for Review bookmarks, instant fireworks on right answers, and a full accuracy report.</p>
+                    <span class="feature-cta">Enter Practice Mode ➔</span>
+                </a>
+
+                <a href="#revision" class="feature-card">
+                    <div class="feature-top">
+                        <span class="feature-icon">⚡</span>
+                        <span class="feature-tag">Last-Night Saver</span>
+                    </div>
+                    <h3>The 8-Mark Answer Blueprint</h3>
+                    <p>Short on time before the exam? Grab 22 high-yield comparisons, 34 full forms, and the exact 8-step structure to score full marks on long answers.</p>
+                    <span class="feature-cta">Open Quick Revision ➔</span>
+                </a>
+            </div>
+
+            <!-- Website Features Explained with Architecture Diagram -->
+            <div class="section-heading">
+                <h2>How <span class="text-gradient">WebLearnx</span> Works — Features &amp; Architecture</h2>
+                <p>A complete end-to-end breakdown of how every module in WebLearnx connects to help you master Web Technology (CS35302).</p>
+            </div>
+
+            <div class="arch-section-card">
+                <!-- Visual System Architecture & Learning Flow Diagram -->
+                <div class="arch-diagram-wrapper">
+                    <div class="arch-diagram-header">WebLearnx End-to-End Learning &amp; Exam Architecture Diagram</div>
+
+                    <!-- Tier 1: Entry -->
+                    <div class="arch-tier">
+                        <div class="arch-box entry">
+                            <span class="arch-box-step">Step 1 • Portal Entry</span>
+                            <strong>WebLearnx Smart Dashboard</strong>
+                            <small>Hash Routing • Live IST Clock • Study Progress Tracker • Dark / Bright Theme</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Choose Your Study Layer &nbsp; ▼</div>
+
+                    <!-- Tier 2: Core Study Modules -->
+                    <div class="arch-tier">
+                        <div class="arch-box">
+                            <span class="arch-box-step">Module A</span>
+                            <strong>🗺️ Official Syllabus</strong>
+                            <small>CS35302 5-Unit Roadmap (36 Hrs) with Direct Unit Links</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Module B</span>
+                            <strong>📘 Unit 1–5 Notes</strong>
+                            <small>Pure English Notes + Visual Protocol &amp; Architecture Diagrams</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Module C</span>
+                            <strong>📝 Tutorials 1–5</strong>
+                            <small>100% Uncompressed Q&amp;A, Tables &amp; One-Click Copy Code</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Module D</span>
+                            <strong>✍️ Handwritten Studio</strong>
+                            <small>Virtual Ruled Notebook (Pen/Pencil + Highlighter/Eraser) &amp; Original PDF</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Test &amp; Verify Your Knowledge &nbsp; ▼</div>
+
+                    <!-- Tier 3: Evaluation & Practice -->
+                    <div class="arch-tier">
+                        <div class="arch-box accent-box" style="max-width: 380px;">
+                            <span class="arch-box-step">Assessment Layer 1</span>
+                            <strong>🎯 LMS Assignments Portal</strong>
+                            <small>Name + Random Roll No. • Full Validation • Submit First → View Results Later</small>
+                        </div>
+                        <div class="arch-box accent-box" style="max-width: 380px;">
+                            <span class="arch-box-step">Assessment Layer 2</span>
+                            <strong>🔥 2-Chance CBT Exam Engine</strong>
+                            <small>25 Unit-Wise MCQs • Live Timer • Color Palette • +1 (1st) / +0.5 (2nd) Marks</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Instant Feedback &amp; Exam Readiness &nbsp; ▼</div>
+
+                    <!-- Tier 4: Outcome -->
+                    <div class="arch-tier">
+                        <div class="arch-box green-box">
+                            <span class="arch-box-step">Final Outcome</span>
+                            <strong>📊 Official Score Card, Unit Analytics &amp; 8-Mark Quick Revision</strong>
+                            <small>True Accuracy %, Unit Progress Bars, 3D Revision Flashcards &amp; Exam Blueprint</small>
+                        </div>
+                    </div>
+
+                    <!-- Underlying Smart Toolkit -->
+                    <div class="arch-toolkit-strip">
+                        <strong>Always-On Study Toolkit &amp; Controls:</strong> 🔍 Global Search (Ctrl+K) &nbsp;•&nbsp; ▾ Hover-Open More Menu &nbsp;•&nbsp; 🔄 One-Click Account Reset &nbsp;•&nbsp; 🍅 Pomodoro &nbsp;•&nbsp; 🔊 Read-Aloud TTS &nbsp;•&nbsp; A-/A+ Font Scaling
+                    </div>
+                </div>
+
+                <!-- Detailed Feature Explanations -->
+                <div class="feature-explain-grid">
+                    <div class="feature-explain-item">
+                        <h4>📘 1. Visual Unit Notes &amp; Quick Revision</h4>
+                        <p>Every unit (Unit 1 to Unit 5) is written in clean, exam-ready English with built-in diagrams for HTTP, DNS, CSS Box Model, DOM Tree, SOAP, AJAX, CORBA, MVC, RDF, Blockchain, and IoT, backed by 3D flip-cards and 34 full forms.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>✍️ 2. Dual Handwritten Notes Studio</h4>
+                        <p>Switch seamlessly between <strong>Virtual Handwritten</strong> (ruled notebook paper with Blue/Black/Purple Pens, HB/2B Pencils, 4-color Highlighter, and dedicated Remove Highlighter eraser) and <strong>Original Handwritten</strong> (direct PDF viewer).</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🎯 3. Authentic LMS Assignments</h4>
+                        <p>Registers each student with a Name and Random Roll Number before starting, blocks incomplete submissions, confirms submission cleanly, and reveals detailed marks, grade, and color-coded answers only on clicking View Results.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔥 4. Honest 2-Chance CBT Practice Engine</h4>
+                        <p>Simulates a real university computer-based test with Candidate Name + Random Roll No., 25 MCQs across all 5 units, countdown auto-submit timer, color-coded Question Palette, and strict 2-chance scoring (+1 on 1st try, +0.5 on 2nd try) so progress is always genuine.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔍 5. Hover-Open More Menu, Search &amp; Study Toolkit</h4>
+                        <p>Hover over <strong>More ▾</strong> to instantly access Features, Quick Revision, Exam Points, Keyboard Shortcuts, Print, and Account Reset. Press <code>Ctrl + K</code> to search any topic, or use the floating Pomodoro, TTS, and Font Size toolkit.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔄 6. One-Click Full Account Reset &amp; Responsive Design</h4>
+                        <p>Click <strong>Reset Account</strong> from the Dashboard or <strong>More ▾</strong> menu anytime to cleanly wipe study progress, assignments, CBT scores, Roll No., and highlights—built fully responsive across Mobile, Tablet, Laptop, Desktop, and TV.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Section -->
+            <div class="section-heading">
+                <h2>Quick Access</h2>
+                <p>Jump directly to any core section of <strong>WebLearnx</strong>.</p>
+            </div>
+            <div class="notes-grid" style="margin-bottom: 20px;">
+                <a href="#unit1" class="note-card">
+                    <h3>Start Unit 1</h3>
+                    <p>Internet History, WWW, HTTP, Email Protocols &amp; DNS.</p>
+                </a>
+                <a href="#tut1" class="note-card">
+                    <h3>Start Tutorial 1</h3>
+                    <p>POP3 vs IMAP, HTTP Request-Response &amp; HTTPS Security.</p>
+                </a>
+                <a href="#revision" class="note-card" style="border-color: var(--accent);">
+                    <h3 style="color: var(--accent);">Exam Quick Revision</h3>
+                    <p>Full Forms, Comparisons &amp; 8-Mark Answer Strategy.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- ================= SYLLABUS PAGE ================= -->
+        <div id="syllabus" class="page">
+            <div class="glass-card">
+                <h2>Official Syllabus — Web Technology (CS35302)</h2>
+                <p><strong>Quantum University, Roorkee, India</strong> — Quantum School of Technology<br>
+                <span style="color: var(--text-muted); font-size: 0.95rem;">Roorkee - Dehradun Highway, Mandawar, Roorkee, Uttarakhand 247167 &nbsp;|&nbsp; www.quantumuniversity.edu.in</span></p>
+
+                <div class="syllabus-meta-grid">
+                    <div class="syllabus-meta-item"><span>Course Type</span><strong>Engineering</strong></div>
+                    <div class="syllabus-meta-item"><span>Course</span><strong>Bachelor of Technology</strong></div>
+                    <div class="syllabus-meta-item"><span>Branch</span><strong>Computer Science And Engineering (CSE)</strong></div>
+                    <div class="syllabus-meta-item"><span>Year / Semester</span><strong>5th Semester</strong></div>
+                    <div class="syllabus-meta-item"><span>Subject &amp; Code</span><strong>Web Technology (CS35302)</strong></div>
+                    <div class="syllabus-meta-item"><span>Total Duration</span><strong>36 Hours (5 Units)</strong></div>
+                </div>
+
+                <div class="table-responsive"><table>
+                    <tr>
+                        <th style="width: 11%;">Unit</th>
+                        <th>Topics Covered</th>
+                        <th style="width: 12%;">Duration</th>
+                        <th style="width: 16%;">Study Link</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit-1</strong></td>
+                        <td>History of the Internet, World Wide Web-HTML, protocols - HTTP, SMTP, protocols - POP3, MIME, IMAP, Domain Name Server, Web Browsers, Web Servers</td>
+                        <td><strong>7 Hours</strong></td>
+                        <td><a href="#unit1" class="unit-jump-btn">Read Unit 1 ➔</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit-2</strong></td>
+                        <td>List, Tables, Images, Forms, Frames, Dynamic HTML with Java Script, CSS, Document type definition, Dynamic HTML, XML schemes, Object Models, Presenting XML, Using XML Processors: DOM and SAX</td>
+                        <td><strong>8 Hours</strong></td>
+                        <td><a href="#unit2" class="unit-jump-btn">Read Unit 2 ➔</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit-3</strong></td>
+                        <td>Introduction to Web Services, UDDI, SOAP, WSDL, Web Service Architecture, Developing and deploying web services, Ajax - Improving web page performance using Ajax, Programming in Ajax, CORBA</td>
+                        <td><strong>7 Hours</strong></td>
+                        <td><a href="#unit3" class="unit-jump-btn">Read Unit 3 ➔</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit-4</strong></td>
+                        <td>Web 2.0: Interactive and Social Web (Blogs, Wikis, Social Networking Sites), Technologies Behind Web 2.0: AJAX, RSS, Ruby on Rails, Open APIs, Web 3.0: Semantic Web, Widgets, Mashups, and RDF, Web-Based Information Systems, Search Engines, Recommender Systems, Benefits of Blockchain, Edge Computing, and Dark Mode in Web Development</td>
+                        <td><strong>7 Hours</strong></td>
+                        <td><a href="#unit4" class="unit-jump-btn">Read Unit 4 ➔</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unit-5</strong></td>
+                        <td>Web 4.0: AI-Powered Web and Personalized Content, Decentralized Web (DWeb) and Blockchain Integration, Internet of Things (IoT) in Web Development, Augmented Reality (AR) and Virtual Reality (VR) in Web, Smart Web, Adaptive Interfaces, Web Automation, Impact of 5G on Web Technologies</td>
+                        <td><strong>7 Hours</strong></td>
+                        <td><a href="#unit5" class="unit-jump-btn">Read Unit 5 ➔</a></td>
+                    </tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ================= NOTES HUB (UNIT 1 TO UNIT 5 FROM PDF) ================= -->
+        <div id="notes-hub" class="page">
+            <div class="glass-card" style="margin-bottom:20px;">
+                <h3 style="margin-top:0;">WEB TECHNOLOGY (CS35302) — COMPLETE NOTES: UNIT 1 TO UNIT 5</h3>
+                <p><strong>Quantum University, Roorkee</strong> | Quantum School of Technology | Dept. of Computer Science &amp; Engineering</p>
+                <p><strong>Program:</strong> Bachelor of Technology (B.Tech) | <strong>Semester:</strong> 5th Semester | <strong>Session:</strong> 2026–2027 | <strong>Faculty:</strong> Assistant Professor Deepak Saini</p>
+            </div>
+            <div class="notes-grid">
+                <a href="#unit1" class="note-card"><h3>UNIT 1 (7 Hours)</h3><p>History of Internet, WWW, HTML, HTTP, SMTP, POP3, MIME, IMAP, DNS, Web Browsers &amp; Web Servers.</p></a>
+                <a href="#unit2" class="note-card"><h3>UNIT 2 (8 Hours)</h3><p>HTML Lists, Tables, Images, Forms, Frames, CSS, DHTML, JavaScript, XML, XML Schema, DOM &amp; SAX.</p></a>
+                <a href="#unit3" class="note-card"><h3>UNIT 3 (7 Hours)</h3><p>Web Services, UDDI, SOAP, WSDL, Architecture, Developing &amp; Deploying, AJAX &amp; Performance, CORBA.</p></a>
+                <a href="#unit4" class="note-card"><h3>UNIT 4 (7 Hours)</h3><p>Web 2.0, Blogs, Wikis, Social Web, RSS, Ruby on Rails, Open APIs, Web 3.0, Semantic Web, Widgets, Mashups, RDF, WBIS, Search Engines, Recommender, Blockchain, Edge &amp; Dark Mode.</p></a>
+                <a href="#unit5" class="note-card"><h3>UNIT 5 (7 Hours)</h3><p>Web 4.0, AI-Powered Web, DWeb, Blockchain Integration, IoT, AR &amp; VR, Smart Web, Adaptive Interfaces, Web Automation &amp; 5G.</p></a>
+                <a href="#revision" class="note-card" style="border-color:var(--accent);"><h3 style="color:var(--accent);">Quick Revision</h3><p>22 Key Comparisons, 34 Full Forms, Unit-wise Long Questions, 8-Mark Exam Format &amp; Study Sequence.</p></a>
+            </div>
+        </div>
+
+        <!-- ================= UNIT 1 NOTES ================= -->
+        <div id="unit1" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>UNIT 1 — Introduction to Internet and World Wide Web (7 Hours)</h2>
+
+                <h3>1. History of the Internet</h3>
+                <div class="hinglish-box"><strong>Simple Explanation:</strong> The Internet is a worldwide network that connects computers, mobile devices, and servers across the globe (for example: searching on Google, sending WhatsApp messages, watching YouTube videos, and shopping online).</div>
+                <div class="def-box"><strong>Definition (Exam Ready):</strong> The Internet is a global network of interconnected computer networks that communicate and share information using standard communication protocols such as TCP/IP.</div>
+                <div class="table-responsive"><table>
+                    <tr><th>Year</th><th>Development</th></tr>
+                    <tr><td>1960s</td><td>Early research on computer networking</td></tr>
+                    <tr><td>1969</td><td>ARPANET (Advanced Research Projects Agency Network) was developed</td></tr>
+                    <tr><td>1971</td><td>First network email was sent</td></tr>
+                    <tr><td>1974</td><td>TCP/IP protocol was proposed</td></tr>
+                    <tr><td>1983</td><td>ARPANET adopted TCP/IP</td></tr>
+                    <tr><td>1984</td><td>DNS was introduced</td></tr>
+                    <tr><td>1989</td><td>Tim Berners-Lee proposed the World Wide Web</td></tr>
+                    <tr><td>1991</td><td>World Wide Web became publicly available</td></tr>
+                    <tr><td>1993</td><td>Mosaic graphical web browser was released</td></tr>
+                </table></div>
+                <p><strong>Advantages:</strong> 1. Fast communication, 2. Easy access to information, 3. Online education, 4. Online banking and shopping, 5. File sharing, 6. Entertainment, 7. Global connectivity.</p>
+                <p><strong>Disadvantages:</strong> 1. Security and privacy risks, 2. Cybercrime, 3. Fake information, 4. Internet addiction, 5. Malware and viruses, 6. Data theft.</p>
+
+                <h3>2. World Wide Web (WWW)</h3>
+                <div class="hinglish-box"><strong>Simple Explanation:</strong> The World Wide Web (WWW) is the collection of websites and web pages available on the Internet. <em>Remember: The Internet is the road; the WWW is one type of service travelling on that road.</em></div>
+                <div class="def-box"><strong>Definition:</strong> The World Wide Web (WWW) is a collection of interconnected web pages and resources accessed through the Internet using web browsers and web protocols.</div>
+                <p><strong>Components of WWW:</strong> 1. Web Browser, 2. Web Server, 3. URL, 4. HTTP/HTTPS, 5. HTML, 6. Hyperlinks.</p>
+                <div class="table-responsive"><table>
+                    <tr><th>Internet</th><th>WWW</th></tr>
+                    <tr><td>Global network of networks.</td><td>Collection of web pages and resources.</td></tr>
+                    <tr><td>Infrastructure of communication.</td><td>Service that operates over Internet.</td></tr>
+                    <tr><td>Supports email, FTP, WWW, etc.</td><td>Mainly provides access to websites.</td></tr>
+                    <tr><td>Uses multiple protocols.</td><td>Primarily uses HTTP/HTTPS.</td></tr>
+                </table></div>
+
+                <h3>3. HTML (HyperText Markup Language)</h3>
+                <div class="def-box"><strong>Definition:</strong> HTML is a standard markup language used to create and structure web pages using tags and elements.</div>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Welcome to Web Technology&lt;/h1&gt;
+  &lt;p&gt;This is my first web page.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                <p><strong>Important HTML Tags:</strong> <code>&lt;h1&gt;–&lt;h6&gt;</code> (Headings), <code>&lt;p&gt;</code> (Paragraph), <code>&lt;br&gt;</code> (Line break), <code>&lt;hr&gt;</code> (Horizontal line), <code>&lt;b&gt;</code> (Bold), <code>&lt;i&gt;</code> (Italic), <code>&lt;u&gt;</code> (Underlined), <code>&lt;img&gt;</code> (Image), <code>&lt;a&gt;</code> (Hyperlink), <code>&lt;table&gt;</code> (Table), <code>&lt;form&gt;</code> (Form), <code>&lt;ul&gt;</code> (Unordered list), <code>&lt;ol&gt;</code> (Ordered list).</p>
+
+                <h3>4. HTTP (HyperText Transfer Protocol)</h3>
+                <div class="def-box"><strong>Definition:</strong> HTTP is an application-layer protocol used for transferring hypertext and other resources between web clients and web servers.</div>
+                <div class="diagram-box">
+                    <div class="diagram-title">HTTP Request – Response Cycle</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Web Browser<br><small>(Client)</small></div>
+                        <div class="flow-arrow">── HTTP Request (GET/POST) ──▶</div>
+                        <div class="flow-node accent">Web Server<br><small>(Processes)</small></div>
+                        <div class="flow-arrow">── HTTP Response (200 OK) ──▶</div>
+                        <div class="flow-node">Browser Renders Page</div>
+                    </div>
+                </div>
+                <div class="table-responsive"><table>
+                    <tr><th>HTTP Method</th><th>Meaning</th><th>Status Code</th><th>Meaning</th></tr>
+                    <tr><td>GET</td><td>Retrieve data</td><td>200 / 201</td><td>OK / Created</td></tr>
+                    <tr><td>POST</td><td>Submit data</td><td>301</td><td>Moved Permanently</td></tr>
+                    <tr><td>PUT / PATCH</td><td>Create/Replace / Partially update</td><td>400 / 401 / 403</td><td>Bad Request / Unauthorized / Forbidden</td></tr>
+                    <tr><td>DELETE / HEAD</td><td>Delete / Response headers only</td><td>404 / 500 / 503</td><td>Not Found / Internal Server Error / Unavailable</td></tr>
+                </table></div>
+                <div class="table-responsive"><table>
+                    <tr><th>HTTP</th><th>HTTPS</th></tr>
+                    <tr><td>HyperText Transfer Protocol; not encrypted by itself; less secure; Default Port 80.</td><td>HyperText Transfer Protocol Secure; uses TLS encryption; secure communication; Default Port 443.</td></tr>
+                </table></div>
+
+                <h3>5. SMTP, POP3, MIME &amp; IMAP (Email Protocols)</h3>
+                <div class="diagram-box">
+                    <div class="diagram-title">Email Communication Flow</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Sender Client</div>
+                        <div class="flow-arrow">── SMTP (25/587/465) ──▶</div>
+                        <div class="flow-node accent">Mail Server<br><small>(MIME Attachments)</small></div>
+                        <div class="flow-arrow">── POP3 (110/995) / IMAP (143/993) ──▶</div>
+                        <div class="flow-node">Recipient Client</div>
+                    </div>
+                </div>
+                <ul>
+                    <li><strong>SMTP (Simple Mail Transfer Protocol — Sending Email):</strong> Transfers email from client to server and between servers. Ports: <strong>25</strong> (server-to-server), <strong>587</strong> (STARTTLS), <strong>465</strong> (implicit TLS).</li>
+                    <li><strong>POP3 (Post Office Protocol Version 3 — Downloading Email):</strong> Downloads emails to the client, supports offline reading, may delete from server. Ports: <strong>110</strong> / <strong>995</strong> (TLS).</li>
+                    <li><strong>MIME (Multipurpose Internet Mail Extensions):</strong> Extends email format for non-text data, multimedia, and attachments. MIME Types: <code>text/html</code>, <code>text/plain</code>, <code>image/jpeg</code>, <code>image/png</code>, <code>application/pdf</code>, <code>audio/mpeg</code>, <code>video/mp4</code>.</li>
+                    <li><strong>IMAP (Internet Message Access Protocol — Server Sync):</strong> Stores emails on server, synchronizes folders/changes across multiple devices. Ports: <strong>143</strong> / <strong>993</strong> (TLS).</li>
+                </ul>
+                <div class="table-responsive"><table>
+                    <tr><th>POP3</th><th>IMAP</th></tr>
+                    <tr><td>Downloads emails; designed for local retrieval.</td><td>Synchronizes emails with server; server-based management.</td></tr>
+                    <tr><td>Limited sync; works offline after download.</td><td>Supports multiple devices; requires connectivity for sync.</td></tr>
+                </table></div>
+
+                <h3>6. Domain Name System (DNS)</h3>
+                <div class="def-box"><strong>Definition:</strong> DNS is a hierarchical and distributed naming system that translates human-readable domain names (e.g., <code>www.google.com</code>) into IP addresses.</div>
+                <div class="diagram-box">
+                    <div class="diagram-title">DNS Resolution Architecture</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Browser Cache</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">DNS Resolver</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">Root Name Server</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">TLD Server<br><small>(.com, .org, .in)</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Authoritative Server<br><small>(Returns IP)</small></div>
+                    </div>
+                </div>
+                <p><strong>Common DNS Records:</strong> <code>A</code> (IPv4), <code>AAAA</code> (IPv6), <code>MX</code> (Mail servers), <code>CNAME</code> (Domain alias), <code>NS</code> (Name servers), <code>TXT</code> (Text information).</p>
+
+                <h3>7. Web Browsers &amp; Web Servers</h3>
+                <div class="table-responsive"><table>
+                    <tr><th>Web Browser (Client-side)</th><th>Web Server (Server-side)</th></tr>
+                    <tr><td>Requests &amp; displays web pages; executes JS &amp; CSS; manages cookies, cache, bookmarks &amp; downloads.</td><td>Stores/generates website files; receives &amp; processes HTTP requests; sends responses; supports security &amp; logging.</td></tr>
+                    <tr><td>Examples: Chrome, Firefox, Edge, Safari, Opera.</td><td>Examples: Apache HTTP Server, Nginx, Microsoft IIS.</td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ================= UNIT 2 NOTES ================= -->
+        <div id="unit2" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>UNIT 2 — HTML, CSS, JavaScript and XML (8 Hours)</h2>
+
+                <h3>1. HTML Lists, Tables, Images, Forms &amp; Frames</h3>
+                <ul>
+                    <li><strong>Lists:</strong> Ordered (<code>&lt;ol&gt;</code>), Unordered (<code>&lt;ul&gt;</code>), Description (<code>&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;</code>).</li>
+                    <li><strong>Tables:</strong> Tags: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>. Merging: <code>colspan</code> (columns) &amp; <code>rowspan</code> (rows).</li>
+                    <li><strong>Images:</strong> <code>&lt;img src="photo.jpg" alt="My Photo" width="200"&gt;</code> — empty (void) element.</li>
+                    <li><strong>Forms:</strong> Elements: <code>text</code>, <code>password</code>, <code>email</code>, <code>radio</code>, <code>checkbox</code>, <code>submit</code>, <code>reset</code>, <code>textarea</code>, <code>select</code>, <code>button</code>.</li>
+                    <li><strong>Frames:</strong> <code>&lt;frameset&gt;</code> was removed in HTML5; modern web uses CSS layouts and <code>&lt;iframe src="https://example.com" width="400" height="300"&gt;&lt;/iframe&gt;</code>.</li>
+                </ul>
+                <div class="table-responsive"><table>
+                    <tr><th>GET</th><th>POST</th></tr>
+                    <tr><td>Sends data via URL parameters; suitable for retrieving data; bookmarkable.</td><td>Sends data in request body; suitable for submitting data; not displayed in URL.</td></tr>
+                </table></div>
+
+                <h3>2. CSS (Cascading Style Sheets)</h3>
+                <div class="def-box"><strong>Definition:</strong> CSS is a style sheet language used to describe the presentation, layout, colours, fonts and appearance of HTML documents.</div>
+                <ul>
+                    <li><strong>Inline CSS:</strong> <code>&lt;p style="color: blue;"&gt;Hello World&lt;/p&gt;</code></li>
+                    <li><strong>Internal CSS:</strong> Written inside <code>&lt;style&gt;</code> tag in <code>&lt;head&gt;</code>.</li>
+                    <li><strong>External CSS:</strong> Linked via <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.</li>
+                </ul>
+                <p><strong>Selectors:</strong> Element (<code>p</code>), Class (<code>.box</code>), ID (<code>#header</code>), Universal (<code>*</code>), Group (<code>h1, p</code>), Descendant (<code>div p</code>).</p>
+                <div class="diagram-box">
+                    <div class="diagram-title">CSS Box Model</div>
+                    <div class="box-model-margin">
+                        <div style="font-size:0.8rem; margin-bottom:5px; color:var(--accent);">Margin (Space outside border)</div>
+                        <div class="box-model-border">
+                            <div style="font-size:0.8rem; margin-bottom:5px; color:#c4b5fd;">Border (Boundary)</div>
+                            <div class="box-model-padding">
+                                <div style="font-size:0.8rem; margin-bottom:5px; color:var(--primary);">Padding (Space around content)</div>
+                                <div class="box-model-content">Content (Text / Image)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Advantages:</strong> Separates content from design, improves appearance, reusable styling, reduces repeated code, easier maintenance, responsive layouts.</p>
+
+                <h3>3. Dynamic HTML (DHTML) &amp; JavaScript</h3>
+                <div class="def-box"><strong>DHTML:</strong> Combination of <strong>HTML</strong> (Structure) + <strong>CSS</strong> (Presentation) + <strong>JavaScript</strong> (Behaviour) + <strong>DOM</strong> (Element access/modification) for dynamic pages without full reloads.</div>
+                <p><strong>JavaScript Features:</strong> Lightweight, dynamic, event-driven, supports functions, object-based, runs in browsers, supports asynchronous operations.</p>
+                <p><strong>JavaScript Events:</strong> <code>onclick</code>, <code>onmouseover</code>, <code>onmouseout</code>, <code>onkeydown</code>, <code>onload</code>, <code>onchange</code>, <code>onsubmit</code>.</p>
+
+                <h3>4. XML, XML Schema (XSD), DOM &amp; SAX</h3>
+                <div class="def-box"><strong>XML (Extensible Markup Language):</strong> Designed to store, structure, and transport data in a readable, self-descriptive format using custom tags.</div>
+                <p><strong>Rules of XML:</strong> 1. One root element, 2. Properly closed tags, 3. Case-sensitive, 4. Properly nested, 5. Quoted attribute values.</p>
+                <p><strong>Presenting XML:</strong> CSS with XML, XSL, XSLT (transforms XML to HTML/XML/text), XPath (selects specific elements/attributes).</p>
+                <div class="diagram-box">
+                    <div class="diagram-title">XML DOM Tree Model</div>
+                    <div class="flow-row" style="flex-direction:column;">
+                        <div class="flow-node accent">&lt;student&gt; (Root)</div>
+                        <div class="flow-arrow">↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘</div>
+                        <div class="flow-row">
+                            <div class="flow-node">&lt;name&gt; → "Rahul"</div>
+                            <div class="flow-node">&lt;age&gt; → "21"</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive"><table>
+                    <tr><th>DTD</th><th>XML Schema (XSD)</th></tr>
+                    <tr><td>Own syntax; limited data types; limited namespace support.</td><td>Written in XML syntax; rich data types; supports namespaces &amp; powerful validation.</td></tr>
+                    <tr><th>DOM Parser (Full doc in memory)</th><th>SAX Parser (Read step by step)</th></tr>
+                    <tr><td>Tree-based; loads complete document into memory; random access &amp; easy modification.</td><td>Event-based; reads sequentially; low memory; suitable for large XML documents.</td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ================= UNIT 3 NOTES ================= -->
+        <div id="unit3" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>UNIT 3 — Web Services, AJAX and CORBA (7 Hours)</h2>
+
+                <h3>1. Web Services, UDDI, SOAP &amp; WSDL</h3>
+                <div class="def-box"><strong>Web Service:</strong> A software system supporting interoperable machine-to-machine communication over a network. Types: <strong>SOAP</strong> (XML-based) &amp; <strong>RESTful</strong> (HTTP + JSON).</div>
+                <ul>
+                    <li><strong>UDDI (Find):</strong> Framework to publish, register, and discover web services. Components: <strong>White Pages</strong> (business info), <strong>Yellow Pages</strong> (categories), <strong>Green Pages</strong> (technical details).</li>
+                    <li><strong>WSDL (Describe):</strong> XML-based language describing operations, messages, protocols, and endpoints (<code>Types</code>, <code>Message</code>, <code>PortType</code>, <code>Binding</code>, <code>Port</code>, <code>Service</code>).</li>
+                    <li><strong>SOAP (Communicate):</strong> XML-based messaging protocol for structured data exchange.</li>
+                </ul>
+                <div class="diagram-box">
+                    <div class="diagram-title">Web Service Architecture (Publish – Find – Bind)</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Service Provider</div>
+                        <div class="flow-arrow">── Publish (WSDL) ──▶</div>
+                        <div class="flow-node accent">Service Registry<br><small>(UDDI)</small></div>
+                        <div class="flow-arrow">◀── Find ──</div>
+                        <div class="flow-node">Service Requester</div>
+                    </div>
+                    <div style="margin-top:12px; color:var(--primary); font-weight:600;">Provider ◀═══════ Bind &amp; Communicate (SOAP / XML) ═══════▶ Requester</div>
+                </div>
+                <div class="diagram-box">
+                    <div class="diagram-title">SOAP Message Structure</div>
+                    <div style="border:2px solid var(--primary); border-radius:8px; padding:12px; max-width:460px; margin:0 auto;">
+                        <div style="color:var(--primary); font-weight:700; margin-bottom:8px;">SOAP Envelope</div>
+                        <div style="border:1px dashed var(--accent); padding:8px; margin-bottom:8px; border-radius:6px;"><strong>SOAP Header</strong> (Additional metadata)</div>
+                        <div style="border:1px solid #22c55e; padding:10px; border-radius:6px;">
+                            <strong>SOAP Body</strong> (Actual message)
+                            <div style="border:1px solid #ef4444; padding:6px; margin-top:8px; border-radius:4px; color:#ef4444;"><strong>SOAP Fault</strong> (Error information)</div>
+                        </div>
+                    </div>
+                </div>
+                <p><strong>Developing Steps:</strong> Identify requirements → Design operations → Develop logic → Define I/O → Test → Prepare WSDL.<br>
+                <strong>Deploying Steps:</strong> Configure server → Deploy app → Configure endpoint → Test connectivity → Monitor → Maintain/Update.</p>
+
+                <h3>2. AJAX (Asynchronous JavaScript and XML)</h3>
+                <div class="def-box"><strong>Definition:</strong> AJAX uses JavaScript and asynchronous communication to exchange data with a server and update parts of a web page without reloading the entire page.</div>
+                <div class="diagram-box">
+                    <div class="diagram-title">AJAX Working Flow</div>
+                    <div class="flow-row">
+                        <div class="flow-node">User Action</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">JS (XHR / Fetch)</div><div class="flow-arrow">── Async Req ──▶</div>
+                        <div class="flow-node accent">Server</div><div class="flow-arrow">── JSON/Text ──▶</div>
+                        <div class="flow-node">DOM Update</div>
+                    </div>
+                </div>
+<pre>let xhr = new XMLHttpRequest();
+xhr.open("GET", "data.txt", true);
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    document.getElementById("result").innerHTML = xhr.responseText;
+  }
+};
+xhr.send();</pre>
+                <div class="table-responsive"><table>
+                    <tr><th>Traditional Web</th><th>AJAX Web</th></tr>
+                    <tr><td>Reloads entire page; synchronous-style; more full-page transfers.</td><td>Updates selected sections; asynchronous; transfers only required data.</td></tr>
+                </table></div>
+
+                <h3>3. CORBA (Common Object Request Broker Architecture)</h3>
+                <div class="def-box"><strong>Definition:</strong> Standard developed by OMG enabling communication between distributed objects across different platforms and programming languages (e.g., Java ↔ C++).</div>
+                <div class="diagram-box">
+                    <div class="diagram-title">CORBA Architecture</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Client<br><small>(IDL Stub)</small></div><div class="flow-arrow">◀──▶</div>
+                        <div class="flow-node accent">ORB<br><small>(Object Request Broker)</small></div><div class="flow-arrow">◀──▶</div>
+                        <div class="flow-node">Object Adapter &amp; Server<br><small>(IDL Skeleton)</small></div>
+                    </div>
+                </div>
+                <p><strong>Advantages:</strong> Language &amp; platform independence, distributed communication, reusability, interoperability. <strong>Disadvantages:</strong> Complex architecture, configuration difficulties, overhead.</p>
+            </div>
+        </div>
+
+        <!-- ================= UNIT 4 NOTES ================= -->
+        <div id="unit4" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>UNIT 4 — Web 2.0, Web 3.0 and Modern Web Technologies (7 Hours)</h2>
+
+                <h3>1. Web 2.0, Blogs, Wikis, Social Networks &amp; RSS</h3>
+                <div class="def-box"><strong>Web 2.0:</strong> Second generation of web emphasizing user participation, collaboration, interaction, and user-generated content (Facebook, YouTube, Wikipedia, Instagram).</div>
+                <div class="table-responsive"><table>
+                    <tr><th>Web 1.0</th><th>Web 2.0</th></tr>
+                    <tr><td>Read-only; static pages; owner-published content.</td><td>Read-write &amp; interactive; dynamic apps; user-generated content.</td></tr>
+                    <tr><th>Blog</th><th>Wiki</th></tr>
+                    <tr><td>Chronological posts; single author/team; comments.</td><td>Topic-linked pages; collaborative editing by multiple users.</td></tr>
+                </table></div>
+                <ul>
+                    <li><strong>RSS (Really Simple Syndication):</strong> Web feed format distributing automatic updates (news, blogs) to subscribers.</li>
+                    <li><strong>Open APIs:</strong> Publicly documented interfaces allowing external apps to integrate data/services.</li>
+                </ul>
+
+                <h3>2. Ruby on Rails (MVC Architecture)</h3>
+                <p>Open-source server-side Ruby framework following <strong>Convention over Configuration</strong> and <strong>MVC</strong>.</p>
+                <div class="diagram-box">
+                    <div class="diagram-title">MVC Architecture</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Model<br><small>(Data &amp; Logic)</small></div><div class="flow-arrow">◀──▶</div>
+                        <div class="flow-node accent">Controller<br><small>(Requests)</small></div><div class="flow-arrow">◀──▶</div>
+                        <div class="flow-node">View<br><small>(UI)</small></div>
+                    </div>
+                </div>
+
+                <h3>3. Web 3.0, Semantic Web, Widgets, Mashups &amp; RDF</h3>
+                <ul>
+                    <li><strong>Web 3.0 &amp; Semantic Web:</strong> Machine-understandable, linked data, intelligent search, personalization, and decentralization.</li>
+                    <li><strong>Widgets:</strong> Small reusable UI components (weather, clock, calendar, search).</li>
+                    <li><strong>Mashups:</strong> Combine multiple sources into a new service (e.g., Google Maps + Restaurant Data). Types: Data, Presentation, Functionality.</li>
+                    <li><strong>RDF (Resource Description Framework):</strong> Represents web resources as <strong>Subject – Predicate – Object</strong> triples.</li>
+                </ul>
+                <div class="diagram-box">
+                    <div class="diagram-title">RDF Triple Example</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Subject: Rahul</div><div class="flow-arrow">── Predicate: Studies ──▶</div><div class="flow-node accent">Object: CSE</div>
+                    </div>
+                </div>
+
+                <h3>4. Web-Based Information Systems, Search Engines &amp; Recommender Systems</h3>
+                <div class="diagram-box">
+                    <div class="diagram-title">Search Engine Working</div>
+                    <div class="flow-row">
+                        <div class="flow-node">1. Crawling<br><small>(Discover)</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">2. Indexing<br><small>(Organize)</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">3. Ranking<br><small>(Order Results)</small></div>
+                    </div>
+                </div>
+                <p><strong>Recommender Systems:</strong> 1. <strong>Content-Based</strong> (user's own history), 2. <strong>Collaborative</strong> (similar users' behavior), 3. <strong>Hybrid</strong> (combines both).</p>
+
+                <h3>5. Blockchain, Edge Computing &amp; Dark Mode</h3>
+                <div class="diagram-box">
+                    <div class="diagram-title">Blockchain Working</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Transaction</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Verification</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">Block Grouped</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Added to Chain</div>
+                    </div>
+                </div>
+                <div class="table-responsive"><table>
+                    <tr><th>Cloud Computing</th><th>Edge Computing</th></tr>
+                    <tr><td>Remote data centres; higher latency; centralized.</td><td>Near data source; low latency; distributed; ideal for IoT.</td></tr>
+                </table></div>
+                <p><strong>Dark Mode:</strong> Dark background with light text (<code>.dark-mode { background-color: #121212; color: white; }</code>) — comfortable in low light, saves OLED power, gives theme choice.</p>
+            </div>
+        </div>
+
+        <!-- ================= UNIT 5 NOTES ================= -->
+        <div id="unit5" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>UNIT 5 — Web 4.0 and Emerging Web Technologies (7 Hours)</h2>
+
+                <h3>1. Web 4.0 &amp; Evolution of the Web</h3>
+                <div class="diagram-box">
+                    <div class="diagram-title">Evolution of the Web</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Web 1.0<br><small>Read-Only</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Web 2.0<br><small>Social &amp; Interactive</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Web 3.0<br><small>Semantic &amp; Decentralized</small></div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">Web 4.0<br><small>AI, IoT &amp; Personalized</small></div>
+                    </div>
+                </div>
+
+                <h3>2. AI-Powered Web, DWeb &amp; Blockchain Integration</h3>
+                <ul>
+                    <li><strong>AI Technologies:</strong> Machine Learning (ML), Natural Language Processing (NLP), Generative AI → chatbots, smart search, voice assistants, personalized content.</li>
+                    <li><strong>Decentralized Web (DWeb):</strong> Distributed peer-to-peer infrastructure; reduced central dependency; higher resilience.</li>
+                    <li><strong>Blockchain Integration:</strong> Smart contracts (auto-executing code), digital wallets, cryptographic keys, distributed ledgers.</li>
+                </ul>
+
+                <h3>3. Internet of Things (IoT) in Web Development</h3>
+                <div class="diagram-box">
+                    <div class="diagram-title">IoT Architecture</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Sensors</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Connectivity</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">Processing</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">Web UI / Actuators</div>
+                    </div>
+                </div>
+
+                <h3>4. AR vs VR, Smart Web, Adaptive Interfaces, Automation &amp; 5G</h3>
+                <div class="table-responsive"><table>
+                    <tr><th>Augmented Reality (AR)</th><th>Virtual Reality (VR)</th></tr>
+                    <tr><td>Overlays digital objects on real world (real world visible; e.g., virtual furniture).</td><td>Creates simulated 3D virtual world (e.g., virtual museum tour).</td></tr>
+                    <tr><th>Adaptive Interface</th><th>Responsive Interface</th></tr>
+                    <tr><td>Adjusts layout, content &amp; functionality by user, device, or context.</td><td>Primarily adjusts layout to screen size using grids &amp; media queries.</td></tr>
+                </table></div>
+                <ul>
+                    <li><strong>Web Automation:</strong> Automates repetitive tasks &amp; testing using <strong>Selenium, Playwright, Puppeteer</strong>.</li>
+                    <li><strong>Impact of 5G:</strong> High data rates, low latency, massive IoT support, faster content delivery, seamless AR/VR &amp; real-time web apps.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ================= QUICK REVISION ================= -->
+        <div id="revision" class="page">
+            <a href="#notes-hub" class="back-btn">⬅ Back to Notes Menu</a>
+            <div class="glass-card">
+                <h2>Quick Revision — All 5 Units</h2>
+
+                <h3>1. 22 Important Comparison Questions</h3>
+                <p>1. Internet vs WWW | 2. HTTP vs HTTPS | 3. SMTP vs POP3 | 4. POP3 vs IMAP | 5. Browser vs Server | 6. HTML vs XML | 7. Ordered vs Unordered List | 8. Inline vs Internal vs External CSS | 9. HTML vs DHTML | 10. DOM vs SAX | 11. DTD vs XML Schema | 12. SOAP vs REST | 13. UDDI vs WSDL vs SOAP | 14. Traditional Web vs AJAX | 15. Web 1.0 vs Web 2.0 | 16. Blog vs Wiki | 17. Web 2.0 vs Web 3.0 | 18. Content-Based vs Collaborative Filtering | 19. Cloud vs Edge Computing | 20. AR vs VR | 21. Centralized vs Decentralized Web | 22. Adaptive vs Responsive Interface.</p>
+
+                <h3>2. Important Full Forms</h3>
+                <div class="table-responsive"><table>
+                    <tr><th>Short</th><th>Full Form</th><th>Short</th><th>Full Form</th></tr>
+                    <tr><td>WWW / HTML</td><td>World Wide Web / HyperText Markup Language</td><td>UDDI</td><td>Universal Description, Discovery &amp; Integration</td></tr>
+                    <tr><td>HTTP / HTTPS</td><td>HyperText Transfer Protocol (Secure)</td><td>SOAP / WSDL</td><td>Simple Object Access Protocol / Web Services Description Language</td></tr>
+                    <tr><td>SMTP / POP3</td><td>Simple Mail Transfer / Post Office Protocol v3</td><td>CORBA / ORB</td><td>Common Object Request Broker Architecture / Object Request Broker</td></tr>
+                    <tr><td>MIME / IMAP</td><td>Multipurpose Internet Mail Extensions / Internet Message Access Protocol</td><td>IDL / RSS</td><td>Interface Definition Language / Really Simple Syndication</td></tr>
+                    <tr><td>DNS / CSS</td><td>Domain Name System / Cascading Style Sheets</td><td>RDF / MVC</td><td>Resource Description Framework / Model View Controller</td></tr>
+                    <tr><td>DHTML / XML</td><td>Dynamic HTML / Extensible Markup Language</td><td>API / AI / ML</td><td>Application Programming Interface / Artificial Intelligence / Machine Learning</td></tr>
+                    <tr><td>DTD / XSD</td><td>Document Type Definition / XML Schema Definition</td><td>IoT / AR / VR</td><td>Internet of Things / Augmented Reality / Virtual Reality</td></tr>
+                    <tr><td>DOM / SAX / AJAX</td><td>Document Object Model / Simple API for XML / Asynchronous JS &amp; XML</td><td>DWeb / 5G</td><td>Decentralized Web / Fifth Generation</td></tr>
+                </table></div>
+
+                <h3>3. How to Write an 8-Mark Exam Answer</h3>
+                <div class="def-box"><strong>Structure:</strong> 1. Introduction → 2. Technical Definition → 3. Explanation (5–7 points) → 4. Step-by-step Working → 5. Diagram → 6. Advantages (4+) → 7. Disadvantages (2+) → 8. Conclusion (2–3 lines).</div>
+
+                <h3>4. Interactive Revision Flashcards (Click Card to Flip)</h3>
+                <div class="flashcard-wrap">
+                    <div class="flashcard" id="revisionFlashcard" onclick="flipFlashcard()">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <span class="fc-label">QUESTION / CONCEPT (Click to Flip)</span>
+                                <div id="fcFrontText" class="fc-text">Loading...</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="fc-label" style="color:#22c55e;">EXAM-READY ANSWER</span>
+                                <div id="fcBackText" class="fc-text">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fc-controls">
+                        <button class="hw-ctrl-btn" onclick="moveFlashcard(-1)">⬅ Prev</button>
+                        <span id="fcCounter" style="font-weight:700; color:var(--primary);">1 / 12</span>
+                        <button class="hw-ctrl-btn" onclick="shuffleFlashcards()">🔀 Shuffle</button>
+                        <button class="hw-ctrl-btn" onclick="moveFlashcard(1)">Next ➡</button>
+                    </div>
+                </div>
+
+                <h3>5. Recommended Study Sequence</h3>
+                <div class="table-responsive"><table>
+                    <tr><th>Priority</th><th>Unit</th><th>Focus</th></tr>
+                    <tr><td>1</td><td>Unit 1</td><td>Internet, HTTP, DNS, Email protocols</td></tr>
+                    <tr><td>2</td><td>Unit 2</td><td>HTML, CSS, JavaScript, XML, DOM/SAX</td></tr>
+                    <tr><td>3</td><td>Unit 3</td><td>UDDI, SOAP, WSDL, AJAX, CORBA</td></tr>
+                    <tr><td>4</td><td>Unit 4</td><td>Web 2.0, Web 3.0, RDF, Blockchain</td></tr>
+                    <tr><td>5</td><td>Unit 5</td><td>Web 4.0, AI, IoT, AR/VR, 5G</td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIALS HUB (100% UNCOMPRESSED ORIGINAL DATA) ================= -->
+        <div id="tutorials-hub" class="page">
+            <div class="glass-card" style="margin-bottom:20px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+                    <div>
+                        <h3 style="margin-top:0;">QUANTUM UNIVERSITY, ROORKEE — TUTORIALS</h3>
+                        <p><strong>Quantum School of Technology</strong> | Department of Computer Science &amp; Engineering</p>
+                        <p style="margin-bottom:0;"><strong>Subject:</strong> Web Technology | <strong>Course Code:</strong> CS35302 | <strong>Program:</strong> Bachelor of Technology (B.Tech)<br>
+                        <strong>Semester:</strong> 5th Semester | <strong>Session:</strong> 2026–2027 | <strong>Faculty:</strong> Assistant Professor Deepak Saini</p>
+                    </div>
+                    <a href="#handwritten-notes" class="handwritten-cta-btn">✍️ View Handwritten Tutorial Notes</a>
+                </div>
+            </div>
+            <div class="notes-grid">
+                <a href="#tut1" class="note-card"><h3>TUTORIAL – 1</h3><p>POP3 vs IMAP, HTTP Request-Response Cycle, HTTP vs HTTPS Security (Full Q&amp;A).</p></a>
+                <a href="#tut2" class="note-card"><h3>TUTORIAL – 2</h3><p>HTML Lists, Tables, Images, Forms, Frames, DHTML, XML Schema, DOM vs SAX (Full Q&amp;A).</p></a>
+                <a href="#tut3" class="note-card"><h3>TUTORIAL – 3</h3><p>UDDI, SOAP, WSDL, Web Service Architecture &amp; Diagram, AJAX Example (Full Q&amp;A).</p></a>
+                <a href="#tut4" class="note-card"><h3>TUTORIAL – 4</h3><p>Web 2.0 vs 3.0, WBIS, Search Engines, Recommender Systems, Blockchain, Edge &amp; Dark Mode (Full Q&amp;A).</p></a>
+                <a href="#tut5" class="note-card"><h3>TUTORIAL – 5</h3><p>Web 4.0 &amp; AI, DWeb, Blockchain + IoT, AR/VR, Adaptive Interfaces, Automation &amp; 5G (Full Q&amp;A).</p></a>
+                <a href="#tut-exam" class="note-card" style="border-color:var(--accent);"><h3 style="color:var(--accent);">Important Exam Points</h3><p>Commonly asked topics across Tutorials 1 to 5.</p></a>
+                <a href="#handwritten-notes" class="note-card" style="border-color:var(--primary);"><h3 style="color:var(--primary);">✍️ Handwritten Tutorial Notes</h3><p>View all Tutorials 1–5 in ruled notebook handwritten style or open your own scanned PDF/images.</p></a>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL 1 (COMPLETE UNCOMPRESSED) ================= -->
+        <div id="tut1" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                <a href="#tutorials-hub" class="back-btn" style="margin-bottom:0;">⬅ Back to Tutorials Menu</a>
+                <button class="handwritten-cta-btn" onclick="openHandwrittenTutorial(1)">✍️ View Handwritten Tutorial 1</button>
+            </div>
+            <div class="glass-card">
+                <h2>TUTORIAL – 1</h2>
+
+                <h3>Q1. Explain how POP3 and IMAP protocols handle email retrieval and what implications this has for accessing email from multiple devices.</h3>
+                <p><strong>Answer:</strong> POP3 (Post Office Protocol Version 3) and IMAP (Internet Message Access Protocol) are two protocols used to retrieve emails from a mail server.</p>
+                <h4>1. POP3 (Post Office Protocol):</h4>
+                <ul>
+                    <li>POP3 downloads emails from the mail server to the user's device.</li>
+                    <li>After downloading, emails may be deleted from the server depending on the settings.</li>
+                    <li>It is mainly suitable for accessing emails from a single device.</li>
+                    <li>It allows users to read downloaded emails without an internet connection.</li>
+                </ul>
+                <h4>2. IMAP (Internet Message Access Protocol):</h4>
+                <ul>
+                    <li>IMAP stores emails on the mail server and allows users to access them from multiple devices.</li>
+                    <li>Changes such as reading, deleting, and organizing emails are synchronized across devices.</li>
+                    <li>It requires an internet connection for accessing server-stored messages.</li>
+                    <li>It is useful for users who access email from mobiles, laptops, and tablets.</li>
+                </ul>
+                <h4>Difference between POP3 and IMAP:</h4>
+                <div class="table-responsive"><table>
+                    <tr><th>POP3</th><th>IMAP</th></tr>
+                    <tr><td>Downloads emails to a device.</td><td>Keeps emails on the server.</td></tr>
+                    <tr><td>Limited synchronization.</td><td>Synchronizes multiple devices.</td></tr>
+                    <tr><td>Suitable for single-device access.</td><td>Suitable for multiple-device access.</td></tr>
+                    <tr><td>Can read downloaded emails offline.</td><td>Synchronizes changes when online.</td></tr>
+                </table></div>
+                <div class="conclusion-box"><strong>Conclusion:</strong> IMAP is generally better for accessing emails from multiple devices, while POP3 is useful for downloading and storing emails locally.</div>
+
+                <h3>Q2. Explain the steps involved in HTTP request and response cycle when a user accesses a website.</h3>
+                <p><strong>Answer:</strong> HTTP (Hypertext Transfer Protocol) is a communication protocol used between a web browser and a web server. It follows a request-response model.</p>
+                <div class="diagram-box">
+                    <div class="diagram-title">HTTP Request – Response Cycle</div>
+                    <div class="flow-row">
+                        <div class="flow-node">1. Enter URL</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">2. DNS Lookup</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">3. TCP / TLS</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">4. HTTP Request</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">5. Server Process</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">6. HTTP Response</div><div class="flow-arrow">▶</div>
+                        <div class="flow-node">7. Render Page</div>
+                    </div>
+                </div>
+                <h4>Steps involved in HTTP request and response cycle:</h4>
+                <ol>
+                    <li><strong>User enters URL:</strong> The user enters a website address in the browser, such as www.google.com.</li>
+                    <li><strong>DNS Resolution:</strong> DNS converts the domain name into the IP address of the web server.</li>
+                    <li><strong>Connection Establishment:</strong> The browser establishes a connection with the server using TCP. HTTPS also performs a TLS handshake.</li>
+                    <li><strong>HTTP Request:</strong> The browser sends an HTTP request containing the method, URL, headers, and sometimes body.</li>
+                    <li><strong>Server Processing:</strong> The web server receives the request, processes it, and retrieves the required information.</li>
+                    <li><strong>HTTP Response:</strong> The server sends a response containing a status code, headers, and requested content.</li>
+                    <li><strong>Browser Rendering:</strong> The browser processes HTML, CSS, and JavaScript and displays the webpage to the user.</li>
+                </ol>
+                <p><strong>Example:</strong> When a user opens a website, the browser sends a GET request, and the server may return a 200 OK status with the webpage content.</p>
+                <div class="conclusion-box"><strong>Conclusion:</strong> The HTTP request-response cycle enables communication between web browsers and servers to deliver web pages and other resources.</div>
+
+                <h3>Q3. Describe the security features provided by web servers to protect data transmitted over HTTP and HTTPS.</h3>
+                <p><strong>Answer:</strong> Web servers use different security mechanisms to protect user information and prevent unauthorized access. HTTP and HTTPS are two protocols used for communication between browsers and web servers.</p>
+                <h4>1. HTTP (Hypertext Transfer Protocol):</h4>
+                <ul>
+                    <li>HTTP transfers data between the browser and server.</li>
+                    <li>It does not provide encryption by itself.</li>
+                    <li>Data can be intercepted or modified during transmission.</li>
+                    <li>It is not suitable for transmitting sensitive information without additional protection.</li>
+                </ul>
+                <h4>2. HTTPS (Hypertext Transfer Protocol Secure):</h4>
+                <p>HTTPS is the secure version of HTTP. It uses SSL/TLS encryption to protect communication.</p>
+                <h4>Security features of web servers:</h4>
+                <ol>
+                    <li><strong>Encryption:</strong> HTTPS encrypts data so unauthorized persons cannot easily read it.</li>
+                    <li><strong>Authentication:</strong> SSL/TLS certificates help verify the identity of the website.</li>
+                    <li><strong>Data Integrity:</strong> It ensures that transmitted data is not modified during communication.</li>
+                    <li><strong>Firewall Protection:</strong> Firewalls filter unwanted traffic and block unauthorized access.</li>
+                    <li><strong>Access Control:</strong> Authentication and authorization restrict access to protected resources.</li>
+                    <li><strong>Secure Cookies:</strong> Secure and HttpOnly cookie attributes help protect session information.</li>
+                    <li><strong>Input Validation:</strong> It helps prevent attacks such as SQL injection and cross-site scripting (XSS).</li>
+                </ol>
+                <h4>Difference between HTTP and HTTPS:</h4>
+                <div class="table-responsive"><table>
+                    <tr><th>HTTP</th><th>HTTPS</th></tr>
+                    <tr><td>Not encrypted by itself.</td><td>Uses TLS encryption.</td></tr>
+                    <tr><td>Less secure.</td><td>More secure.</td></tr>
+                    <tr><td>Uses port 80 by default.</td><td>Uses port 443 by default.</td></tr>
+                    <tr><td>No TLS certificate required.</td><td>Uses a TLS certificate.</td></tr>
+                </table></div>
+                <div class="conclusion-box"><strong>Conclusion:</strong> HTTPS provides better security than HTTP by offering encryption, authentication, and data integrity.</div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL 2 (COMPLETE UNCOMPRESSED) ================= -->
+        <div id="tut2" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                <a href="#tutorials-hub" class="back-btn" style="margin-bottom:0;">⬅ Back to Tutorials Menu</a>
+                <button class="handwritten-cta-btn" onclick="openHandwrittenTutorial(2)">✍️ View Handwritten Tutorial 2</button>
+            </div>
+            <div class="glass-card">
+                <h2>TUTORIAL – 2</h2>
+
+                <h3>Q1. Explain the purpose of Lists, Tables, Images, Forms, and Frames in HTML with suitable examples.</h3>
+                <p><strong>Answer:</strong> HTML (Hypertext Markup Language) is used to create and structure web pages. It provides different elements to organize and display information.</p>
+
+                <h4>1. Lists:</h4>
+                <p>Lists are used to display related items in an organized manner. HTML supports three types of lists:</p>
+                <ul>
+                    <li>Ordered List (<code>&lt;ol&gt;</code>): Displays items in numbered order.</li>
+                    <li>Unordered List (<code>&lt;ul&gt;</code>): Displays items using bullets.</li>
+                    <li>Description List (<code>&lt;dl&gt;</code>): Displays terms and their descriptions.</li>
+                </ul>
+<pre>&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+                <h4>2. Tables:</h4>
+                <p>Tables are used to display data in rows and columns. Important tags include <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code>.</p>
+<pre>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Marks&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Rahul&lt;/td&gt;
+    &lt;td&gt;85&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+
+                <h4>3. Images:</h4>
+                <p>Images make web pages attractive and help display visual information. The <code>&lt;img&gt;</code> tag is used to insert images.</p>
+<pre>&lt;img src="photo.jpg" alt="My Photo" width="200"&gt;</pre>
+
+                <h4>4. Forms:</h4>
+                <p>Forms are used to collect information from users, such as names, email addresses, and passwords. Common form elements include input fields, buttons, checkboxes, and radio buttons.</p>
+<pre>&lt;form&gt;
+  Name: &lt;input type="text"&gt;
+  Email: &lt;input type="email"&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</pre>
+
+                <h4>5. Frames:</h4>
+                <p>Frames are used to display another webpage or document inside the current webpage. Modern HTML uses the <code>&lt;iframe&gt;</code> element for this purpose.</p>
+<pre>&lt;iframe src="https://example.com"
+        width="400" height="250"&gt;
+&lt;/iframe&gt;</pre>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Lists, tables, images, forms, and frames help create organized, interactive, and informative web pages.</div>
+
+                <h3>Q2. Explain the concept of Dynamic HTML (DHTML) and describe how JavaScript is used to make web pages dynamic.</h3>
+                <p><strong>Answer:</strong> Dynamic HTML (DHTML) is a combination of HTML, CSS, JavaScript, and the Document Object Model (DOM) used to create interactive and dynamic web pages. Unlike static HTML pages, DHTML allows webpage content and appearance to change without reloading the entire page.</p>
+                <h4>Main components of DHTML:</h4>
+                <ol>
+                    <li><strong>HTML:</strong> Provides the basic structure and content of a webpage.</li>
+                    <li><strong>CSS:</strong> Controls the design, layout, colours, and appearance.</li>
+                    <li><strong>JavaScript:</strong> Adds functionality and allows users to interact with webpage elements.</li>
+                    <li><strong>DOM:</strong> Provides a programming interface to access and modify HTML elements.</li>
+                </ol>
+                <h4>Role of JavaScript in DHTML:</h4>
+                <ul>
+                    <li>It changes webpage content dynamically.</li>
+                    <li>It modifies CSS styles and colours.</li>
+                    <li>It validates user input in forms.</li>
+                    <li>It handles events such as clicks and mouse movements.</li>
+                    <li>It displays alerts and interactive messages.</li>
+                    <li>It can update webpage content without reloading the entire page.</li>
+                </ul>
+                <h4>Example:</h4>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2 id="demo"&gt;Welcome to Web Technology&lt;/h2&gt;
+
+&lt;button onclick="changeText()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+function changeText() {
+  document.getElementById("demo").innerHTML =
+  "Welcome to Dynamic HTML!";
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                <p><strong>Explanation:</strong> When the user clicks the button, JavaScript accesses the heading through the DOM and changes its text without reloading the page.</p>
+                <div class="conclusion-box"><strong>Conclusion:</strong> DHTML makes websites more interactive, attractive, and user-friendly by combining HTML, CSS, JavaScript, and DOM.</div>
+
+                <h3>Q3. Describe XML Schemas, XML Object Models, and the role of DOM and SAX processors in processing XML documents.</h3>
+                <p><strong>Answer:</strong> XML (Extensible Markup Language) is used to store, organize, and exchange structured data between different applications. XML provides a flexible way to represent information using custom tags.</p>
+                <h4>1. XML Schema (XSD):</h4>
+                <p>XML Schema defines the structure and rules of an XML document.</p>
+                <ul>
+                    <li>It specifies allowed elements and attributes.</li>
+                    <li>It defines data types such as string, integer, and date.</li>
+                    <li>It specifies the order and number of elements.</li>
+                    <li>It helps validate XML documents.</li>
+                </ul>
+<pre>&lt;xs:element name="age" type="xs:int"/&gt;</pre>
+
+                <h4>2. XML Object Model:</h4>
+                <p>The XML Object Model represents an XML document as structured objects or nodes. It allows applications to access, navigate, and modify XML data programmatically.</p>
+
+                <h4>3. DOM (Document Object Model):</h4>
+                <ul>
+                    <li>DOM loads the entire XML document into memory.</li>
+                    <li>It represents XML data as a tree structure.</li>
+                    <li>It allows reading, modifying, adding, and deleting nodes.</li>
+                    <li>It is suitable for smaller XML documents.</li>
+                </ul>
+
+                <h4>4. SAX (Simple API for XML):</h4>
+                <ul>
+                    <li>SAX processes XML documents sequentially.</li>
+                    <li>It reads XML data from beginning to end.</li>
+                    <li>It does not load the entire document into memory.</li>
+                    <li>It is suitable for large XML documents.</li>
+                    <li>It mainly uses event-based processing.</li>
+                </ul>
+
+                <h4>Difference between DOM and SAX:</h4>
+                <div class="table-responsive"><table>
+                    <tr><th>DOM</th><th>SAX</th></tr>
+                    <tr><td>Loads the entire document.</td><td>Reads document sequentially.</td></tr>
+                    <tr><td>Uses more memory.</td><td>Uses less memory.</td></tr>
+                    <tr><td>Supports modification of nodes.</td><td>Mainly used for reading and processing.</td></tr>
+                    <tr><td>Tree-based model.</td><td>Event-based model.</td></tr>
+                </table></div>
+                <div class="conclusion-box"><strong>Conclusion:</strong> XML Schema validates XML documents, while DOM and SAX provide different methods for accessing and processing XML data.</div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL 3 (COMPLETE UNCOMPRESSED) ================= -->
+        <div id="tut3" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                <a href="#tutorials-hub" class="back-btn" style="margin-bottom:0;">⬅ Back to Tutorials Menu</a>
+                <button class="handwritten-cta-btn" onclick="openHandwrittenTutorial(3)">✍️ View Handwritten Tutorial 3</button>
+            </div>
+            <div class="glass-card">
+                <h2>TUTORIAL – 3</h2>
+
+                <h3>Q1. Explain the role of UDDI, SOAP, and WSDL in the context of web services.</h3>
+                <p><strong>Answer:</strong> Web services allow different applications to communicate and exchange data over a network. UDDI, SOAP, and WSDL are important technologies used in traditional web service architecture.</p>
+                <h4>1. UDDI (Universal Description, Discovery and Integration):</h4>
+                <ul>
+                    <li>UDDI is used to publish and discover web services.</li>
+                    <li>It acts as a directory or registry of web services.</li>
+                    <li>Service providers register their services.</li>
+                    <li>Service users search for suitable services.</li>
+                </ul>
+                <h4>2. SOAP (Simple Object Access Protocol):</h4>
+                <ul>
+                    <li>SOAP is a protocol used for exchanging structured information between applications.</li>
+                    <li>It commonly uses XML-based messages.</li>
+                    <li>It supports communication over different network protocols, including HTTP.</li>
+                    <li>It provides a standard format for sending requests and responses.</li>
+                </ul>
+                <h4>3. WSDL (Web Services Description Language):</h4>
+                <ul>
+                    <li>WSDL is an XML-based language used to describe web services.</li>
+                    <li>It specifies available operations and their input and output messages.</li>
+                    <li>It describes communication protocols and service endpoints.</li>
+                    <li>It helps applications understand how to use a web service.</li>
+                </ul>
+                <h4>Working relationship:</h4>
+                <ol>
+                    <li>The service provider publishes service information using UDDI.</li>
+                    <li>The service consumer searches for the required service.</li>
+                    <li>WSDL describes how to access the service.</li>
+                    <li>SOAP is used to exchange messages between applications.</li>
+                </ol>
+                <div class="conclusion-box"><strong>Conclusion:</strong> UDDI helps discover services, WSDL describes services, and SOAP enables communication between applications.</div>
+
+                <h3>Q2. Describe the Web Service Architecture with a neat diagram. Discuss the steps involved in developing and deploying a web service.</h3>
+                <p><strong>Answer:</strong> Web Service Architecture is a framework that allows different applications to communicate and exchange data over the internet using standard protocols.</p>
+                <p>It mainly consists of three components:</p>
+                <ol>
+                    <li><strong>Service Provider:</strong> Creates and provides web services to other applications.</li>
+                    <li><strong>Service Consumer:</strong> The application or user that searches for and uses a web service.</li>
+                    <li><strong>Service Registry:</strong> Stores information about available web services and helps users discover them.</li>
+                </ol>
+                <div class="diagram-box">
+                    <div class="diagram-title">Web Service Architecture Diagram</div>
+                    <div class="flow-row">
+                        <div class="flow-node">Service Provider<br><small>Creates &amp; publishes</small></div>
+                        <div class="flow-arrow">── Publish / Find ──▶</div>
+                        <div class="flow-node accent">Service Registry (UDDI)<br><small>Stores service info</small></div>
+                        <div class="flow-arrow">◀── Find / Details ──</div>
+                        <div class="flow-node">Service Consumer<br><small>Discovers &amp; uses</small></div>
+                    </div>
+                    <div style="margin-top:12px; color:var(--primary); font-size:0.95rem;">WSDL describes the service; SOAP or other communication protocols exchange messages.</div>
+                </div>
+                <h4>Steps involved in developing and deploying a web service:</h4>
+                <ol>
+                    <li><strong>Requirement Analysis:</strong> Identify the purpose and functionality of the web service.</li>
+                    <li><strong>Service Development:</strong> Write the code and develop the required service operations.</li>
+                    <li><strong>Service Description:</strong> Create a WSDL document to describe the service interface.</li>
+                    <li><strong>Testing:</strong> Test the service to check its functionality and correctness.</li>
+                    <li><strong>Deployment:</strong> Host the web service on a web server or cloud platform.</li>
+                    <li><strong>Registration:</strong> Publish service information in a registry if service discovery is required.</li>
+                    <li><strong>Consumption:</strong> Other applications discover and access the service.</li>
+                </ol>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Web Service Architecture provides a standard method for communication between different applications and supports reusable and distributed services.</div>
+
+                <h3>Q3. Explain AJAX and how it improves web page performance. Illustrate with a simple AJAX program example.</h3>
+                <p><strong>Answer:</strong> AJAX stands for Asynchronous JavaScript and XML. It is a web development technique used to exchange data between a browser and server without reloading the entire webpage. AJAX allows web applications to update specific parts of a webpage dynamically.</p>
+                <h4>Features of AJAX:</h4>
+                <ol>
+                    <li>It updates webpage content without a full page reload.</li>
+                    <li>It supports asynchronous communication with the server.</li>
+                    <li>It improves user experience and responsiveness.</li>
+                    <li>It reduces unnecessary data transfer.</li>
+                    <li>It works with technologies such as JavaScript, HTML, CSS, DOM, and JSON.</li>
+                </ol>
+                <h4>How AJAX improves performance:</h4>
+                <ul>
+                    <li>Only the required data is requested from the server.</li>
+                    <li>The complete webpage does not need to reload.</li>
+                    <li>Users can continue interacting with the page during background requests.</li>
+                    <li>It reduces unnecessary server communication and improves responsiveness.</li>
+                </ul>
+                <h4>Example of AJAX using JavaScript:</h4>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h2&gt;AJAX Example&lt;/h2&gt;
+
+&lt;button onclick="loadData()"&gt;Load Data&lt;/button&gt;
+
+&lt;p id="result"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function loadData() {
+  let xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "data.txt", true);
+
+  xhr.onload = function() {
+    if (xhr.status == 200) {
+      document.getElementById("result").innerHTML =
+      xhr.responseText;
+    }
+  };
+
+  xhr.send();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                <p><strong>Explanation:</strong> When the user clicks the button, an AJAX request is sent to the server to retrieve data from data.txt. The response is displayed inside the paragraph without reloading the webpage.</p>
+                <div class="conclusion-box"><strong>Conclusion:</strong> AJAX improves webpage performance and makes web applications faster, interactive, and user-friendly.</div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL 4 (COMPLETE UNCOMPRESSED) ================= -->
+        <div id="tut4" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                <a href="#tutorials-hub" class="back-btn" style="margin-bottom:0;">⬅ Back to Tutorials Menu</a>
+                <button class="handwritten-cta-btn" onclick="openHandwrittenTutorial(4)">✍️ View Handwritten Tutorial 4</button>
+            </div>
+            <div class="glass-card">
+                <h2>TUTORIAL – 4</h2>
+
+                <h3>Q1. Explain the features of Web 2.0 and Web 3.0. Discuss the role of AJAX, RSS, Open APIs, Semantic Web, Widgets, and Mashups in modern web development.</h3>
+                <p><strong>Answer:</strong> Web 2.0 and Web 3.0 are important stages in the development of the World Wide Web. They provide better interaction, information sharing, personalization, and intelligent services.</p>
+                <h4>1. Web 2.0:</h4>
+                <p>Web 2.0 is the second generation of the web that focuses on user participation, collaboration, and content sharing.</p>
+                <ul>
+                    <li>User-generated content.</li>
+                    <li>Social networking and online communities.</li>
+                    <li>Interactive and dynamic websites.</li>
+                    <li>Easy content sharing and collaboration.</li>
+                    <li>Rich user interfaces.</li>
+                </ul>
+                <p><strong>Examples:</strong> Facebook, YouTube, Wikipedia, and Instagram.</p>
+
+                <h4>2. Web 3.0:</h4>
+                <p>Web 3.0 is the next generation of the web that focuses on decentralization, intelligent services, and semantic data.</p>
+                <ul>
+                    <li>Decentralized applications.</li>
+                    <li>Artificial Intelligence and Machine Learning.</li>
+                    <li>Semantic understanding of information.</li>
+                    <li>Better data ownership and privacy.</li>
+                    <li>Blockchain-based services.</li>
+                </ul>
+
+                <h4>Role of important technologies:</h4>
+                <ol>
+                    <li><strong>AJAX:</strong> Allows webpages to update information without reloading the complete page.</li>
+                    <li><strong>RSS (Really Simple Syndication):</strong> Helps users receive automatic updates from websites and blogs.</li>
+                    <li><strong>Open APIs:</strong> Allow different applications to communicate and share data.</li>
+                    <li><strong>Semantic Web:</strong> Makes web data understandable to machines and improves information searching.</li>
+                    <li><strong>Widgets:</strong> Small applications that provide specific functions, such as weather updates and clocks.</li>
+                    <li><strong>Mashups:</strong> Combine information from multiple sources to create a new application, such as a website combining maps and location information.</li>
+                </ol>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Web 2.0 focuses on interaction and collaboration, whereas Web 3.0 focuses on intelligent, connected, and decentralized services. These technologies make modern web development more powerful and interactive.</div>
+
+                <h3>Q2. What are Web-Based Information Systems? Explain the working of search engines and recommender systems with suitable examples. Also, discuss the benefits of blockchain technology in web development.</h3>
+                <p><strong>Answer:</strong> Web-Based Information Systems (WBIS) are software systems that use web technologies to collect, process, store, and share information through internet browsers. They allow users to access information and services from anywhere using an internet connection.<br>
+                <strong>Examples:</strong> online banking, e-commerce websites, online education platforms, and railway reservation systems.</p>
+
+                <h4>1. Working of Search Engines:</h4>
+                <p>A search engine is a software system that helps users find information on the internet.</p>
+                <ol>
+                    <li><strong>Crawling:</strong> Search engine bots visit websites and collect information.</li>
+                    <li><strong>Indexing:</strong> Collected information is organized and stored in a database.</li>
+                    <li><strong>Ranking:</strong> Search engines rank webpages according to relevance and other factors.</li>
+                    <li><strong>Displaying Results:</strong> Relevant results are displayed when users enter a search query.</li>
+                </ol>
+                <p><strong>Example:</strong> Google Search helps users find websites, images, videos, and other information.</p>
+
+                <h4>2. Working of Recommender Systems:</h4>
+                <p>A recommender system suggests products, movies, videos, or services based on user interests and behaviour.</p>
+                <ol>
+                    <li>Collect user data such as searches, ratings, and purchases.</li>
+                    <li>Analyse user preferences and behaviour.</li>
+                    <li>Find similar users or items.</li>
+                    <li>Recommend relevant content to the user.</li>
+                </ol>
+                <p><strong>Examples:</strong> Netflix recommends movies and web series; Amazon recommends products based on previous searches and purchases; YouTube suggests videos based on viewing history.</p>
+
+                <h4>3. Benefits of Blockchain Technology in Web Development:</h4>
+                <p>Blockchain is a decentralized digital ledger that stores information in a secure and distributed manner. Its benefits include:</p>
+                <ul>
+                    <li><strong>Security:</strong> Uses cryptographic techniques to protect data.</li>
+                    <li><strong>Transparency:</strong> Transactions can be verified by network participants.</li>
+                    <li><strong>Decentralization:</strong> Reduces dependence on a central authority.</li>
+                    <li><strong>Data Integrity:</strong> Makes unauthorized changes difficult.</li>
+                    <li><strong>Smart Contracts:</strong> Automates agreements and transactions.</li>
+                    <li><strong>Trust:</strong> Helps build reliable digital applications.</li>
+                </ul>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Web-Based Information Systems provide online information and services. Search engines and recommender systems improve information discovery, while blockchain provides security, transparency, and decentralization.</div>
+
+                <h3>Q3. Explain the importance of Edge Computing and Dark Mode in web development. Discuss how these technologies improve web application performance, user experience, and accessibility.</h3>
+                <p><strong>Answer:</strong> Edge Computing and Dark Mode are important technologies in modern web development. They help improve application performance, user experience, and accessibility.</p>
+
+                <h4>1. Edge Computing:</h4>
+                <p>Edge Computing is a technology in which data processing takes place closer to the user or data source instead of depending completely on a central cloud server.</p>
+                <ul>
+                    <li><strong>Low Latency:</strong> Reduces the time required to process and transfer data.</li>
+                    <li><strong>Faster Response:</strong> Provides quicker responses to user requests.</li>
+                    <li><strong>Reduced Bandwidth:</strong> Reduces unnecessary data transfer to central servers.</li>
+                    <li><strong>Better Performance:</strong> Improves the speed of web applications.</li>
+                    <li><strong>Real-Time Processing:</strong> Supports applications such as online gaming and IoT systems.</li>
+                </ul>
+                <p><strong>Example:</strong> A smart traffic system can process camera data near the road instead of sending all data to a distant cloud server.</p>
+
+                <h4>2. Dark Mode:</h4>
+                <p>Dark Mode is a user interface design in which dark backgrounds and light-coloured text are used instead of traditional light backgrounds.</p>
+                <ul>
+                    <li>Reduces screen brightness in low-light environments.</li>
+                    <li>Provides comfortable viewing for many users.</li>
+                    <li>Can save battery on OLED and AMOLED displays.</li>
+                    <li>Improves visual appearance and user experience.</li>
+                    <li>Gives users the choice between light and dark themes.</li>
+                </ul>
+                <p><strong>Example:</strong> Websites such as YouTube and many social media platforms provide dark mode options.</p>
+
+                <h4>How they improve accessibility and user experience:</h4>
+                <ul>
+                    <li>Edge Computing provides faster access to web services, especially where latency is important.</li>
+                    <li>Dark Mode offers flexible viewing options.</li>
+                    <li>Both technologies help improve the overall user experience.</li>
+                    <li>Proper contrast and user-controlled themes make websites more accessible.</li>
+                </ul>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Edge Computing improves speed and responsiveness, while Dark Mode provides a comfortable and flexible viewing experience. Both are useful in modern web development.</div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL 5 (COMPLETE UNCOMPRESSED) ================= -->
+        <div id="tut5" class="page">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                <a href="#tutorials-hub" class="back-btn" style="margin-bottom:0;">⬅ Back to Tutorials Menu</a>
+                <button class="handwritten-cta-btn" onclick="openHandwrittenTutorial(5)">✍️ View Handwritten Tutorial 5</button>
+            </div>
+            <div class="glass-card">
+                <h2>TUTORIAL – 5</h2>
+
+                <h3>Q1. Explain the concept of Web 4.0 and discuss the role of Artificial Intelligence (AI) in personalized content delivery and smart web applications.</h3>
+                <p><strong>Answer:</strong> Web 4.0 is considered an emerging stage of web development that focuses on intelligent, connected, and highly personalized web services. It aims to create better communication between humans, machines, and digital systems. It combines technologies such as Artificial Intelligence, Machine Learning, Internet of Things (IoT), and advanced automation.</p>
+                <h4>Features of Web 4.0:</h4>
+                <ol>
+                    <li>Intelligent interaction between users and machines.</li>
+                    <li>Personalized services based on user preferences.</li>
+                    <li>Integration of AI and Machine Learning.</li>
+                    <li>Real-time communication and automation.</li>
+                    <li>Better connectivity between smart devices.</li>
+                    <li>Context-aware and adaptive applications.</li>
+                </ol>
+                <h4>Role of Artificial Intelligence in Web 4.0:</h4>
+                <p><strong>1. Personalized Content Delivery:</strong></p>
+                <ul>
+                    <li>AI analyses user interests, searches, and browsing behaviour.</li>
+                    <li>It recommends relevant content, products, and services.</li>
+                    <li>It improves the overall user experience.</li>
+                    <li><em>Example:</em> YouTube recommends videos based on users' viewing history.</li>
+                </ul>
+                <p><strong>2. Smart Web Applications:</strong></p>
+                <ul>
+                    <li>AI-powered chatbots provide automatic customer support.</li>
+                    <li>Virtual assistants understand user queries.</li>
+                    <li>AI helps detect spam and suspicious activities.</li>
+                    <li>Machine Learning improves search results.</li>
+                    <li>AI automates repetitive tasks.</li>
+                    <li><em>Example:</em> An online shopping website uses AI to recommend products according to customer preferences.</li>
+                </ul>
+                <div class="conclusion-box"><strong>Conclusion:</strong> Web 4.0 aims to make the internet more intelligent and personalized. AI plays an important role in providing smart services, automation, and better user experiences.</div>
+
+                <h3>Q2. What is the Decentralized Web (DWeb)? Explain the integration of blockchain and the Internet of Things (IoT) in web development with suitable examples.</h3>
+                <p><strong>Answer:</strong> The Decentralized Web (DWeb) is an approach to web development in which data and services are distributed across multiple computers or networks instead of being controlled by a single central authority. It focuses on user control, privacy, security, and transparency.</p>
+                <h4>Features of DWeb:</h4>
+                <ol>
+                    <li>Decentralized storage and communication.</li>
+                    <li>Better user control over personal data.</li>
+                    <li>Reduced dependence on central servers.</li>
+                    <li>Improved data security and privacy.</li>
+                    <li>Use of peer-to-peer networks and blockchain technology.</li>
+                </ol>
+                <h4>1. Blockchain in Web Development:</h4>
+                <p>Blockchain is a distributed digital ledger that records transactions securely across a network.</p>
+                <ul>
+                    <li>Secure online payments.</li>
+                    <li>Digital identity management.</li>
+                    <li>Smart contracts.</li>
+                    <li>Decentralized applications (DApps).</li>
+                    <li>Transparent transaction records.</li>
+                </ul>
+                <h4>2. Internet of Things (IoT) in Web Development:</h4>
+                <p>IoT refers to a network of physical devices connected to the internet that collect and exchange data. Examples include smart watches, smart home devices, sensors, and connected vehicles.</p>
+                <ul>
+                    <li>Smart home automation.</li>
+                    <li>Healthcare monitoring.</li>
+                    <li>Smart agriculture.</li>
+                    <li>Industrial monitoring.</li>
+                    <li>Smart traffic management.</li>
+                </ul>
+                <h4>3. Integration of Blockchain and IoT:</h4>
+                <p>Blockchain and IoT can work together to provide secure and reliable communication between connected devices.</p>
+                <ul>
+                    <li>IoT devices collect data through sensors.</li>
+                    <li>Data can be recorded on a blockchain network.</li>
+                    <li>Blockchain helps maintain data integrity.</li>
+                    <li>Smart contracts can automatically perform actions based on predefined conditions.</li>
+                </ul>
+                <p><strong>Example:</strong> In a smart home system, IoT sensors detect temperature and blockchain-based smart contracts can support automated operations, such as controlling connected devices.</p>
+                <div class="conclusion-box"><strong>Conclusion:</strong> DWeb provides decentralized internet services, while blockchain and IoT improve security, transparency, automation, and connectivity in modern web applications.</div>
+
+                <h3>Q3. Explain the applications of Augmented Reality (AR) and Virtual Reality (VR) in web technologies. Also, discuss adaptive interfaces, web automation, and the impact of 5G on web application performance.</h3>
+                <p><strong>Answer:</strong> Modern web technologies use Augmented Reality, Virtual Reality, adaptive interfaces, web automation, and 5G to provide better digital experiences.</p>
+
+                <h4>1. Augmented Reality (AR):</h4>
+                <p>Augmented Reality adds digital objects, images, or information to the real-world environment using a camera or other devices.</p>
+                <ul>
+                    <li>Virtual furniture placement in shopping applications.</li>
+                    <li>Virtual try-on of clothes and glasses.</li>
+                    <li>Interactive educational content.</li>
+                    <li>Navigation and location-based information.</li>
+                    <li>Product visualization.</li>
+                </ul>
+                <p><strong>Example:</strong> An online furniture website allows customers to see how a sofa looks in their room using AR.</p>
+
+                <h4>2. Virtual Reality (VR):</h4>
+                <p>Virtual Reality creates a computer-generated environment in which users can interact with a simulated world.</p>
+                <ul>
+                    <li>Virtual tours of buildings and tourist places.</li>
+                    <li>Online gaming and entertainment.</li>
+                    <li>Virtual classrooms and training.</li>
+                    <li>Real estate property visualization.</li>
+                    <li>Medical and technical training.</li>
+                </ul>
+                <p><strong>Example:</strong> A virtual tour allows users to explore a hotel or property without physically visiting it.</p>
+
+                <h4>3. Adaptive Interfaces:</h4>
+                <p>Adaptive interfaces automatically adjust their layout and features according to user preferences, device type, screen size, and usage behaviour.</p>
+                <ul>
+                    <li>Better user experience.</li>
+                    <li>Improved accessibility.</li>
+                    <li>Responsive layouts.</li>
+                    <li>Personalized content presentation.</li>
+                </ul>
+                <p><strong>Example:</strong> A website automatically changes its layout when opened on a mobile phone instead of a laptop.</p>
+
+                <h4>4. Web Automation:</h4>
+                <p>Web automation uses software tools and scripts to perform repetitive tasks automatically.</p>
+                <ul>
+                    <li>Automatic form filling.</li>
+                    <li>Software testing.</li>
+                    <li>Data collection.</li>
+                    <li>Website monitoring.</li>
+                    <li>Automated report generation.</li>
+                </ul>
+                <p><strong>Example:</strong> Selenium is used to automate browser testing.</p>
+
+                <h4>5. Impact of 5G on Web Application Performance:</h4>
+                <p>5G is the fifth generation of mobile network technology. It provides higher data speeds, lower latency, and improved network capacity compared with earlier generations.</p>
+                <ul>
+                    <li>Faster loading of websites and applications.</li>
+                    <li>Better video streaming quality.</li>
+                    <li>Improved online gaming experience.</li>
+                    <li>Faster data transfer.</li>
+                    <li>Better support for AR, VR, and IoT applications.</li>
+                    <li>Improved real-time communication.</li>
+                </ul>
+                <div class="conclusion-box"><strong>Conclusion:</strong> AR and VR provide interactive digital experiences, adaptive interfaces improve usability, web automation saves time, and 5G supports faster and more responsive web applications.</div>
+            </div>
+        </div>
+
+        <!-- ================= TUTORIAL EXAM POINTS ================= -->
+        <div id="tut-exam" class="page">
+            <a href="#tutorials-hub" class="back-btn">⬅ Back to Tutorials Menu</a>
+            <div class="glass-card">
+                <h2>Important Exam Preparation Points</h2>
+                <p>These are the topics you should understand properly because they are commonly asked in Web Technology examinations:</p>
+                <div class="table-responsive"><table>
+                    <tr><th>Tutorial</th><th>Important topics</th></tr>
+                    <tr><td>Tutorial 1</td><td>POP3 vs IMAP, HTTP cycle, HTTP vs HTTPS</td></tr>
+                    <tr><td>Tutorial 2</td><td>HTML tags, DHTML, DOM vs SAX</td></tr>
+                    <tr><td>Tutorial 3</td><td>UDDI, SOAP, WSDL, Web Service Architecture, AJAX</td></tr>
+                    <tr><td>Tutorial 4</td><td>Web 2.0 vs Web 3.0, Search Engines, Blockchain, Edge Computing</td></tr>
+                    <tr><td>Tutorial 5</td><td>Web 4.0, DWeb, Blockchain + IoT, AR vs VR, 5G</td></tr>
+                </table></div>
+            </div>
+        </div>
+
+        <!-- ================= HANDWRITTEN NOTES PAGE (2 MODES) ================= -->
+        <div id="handwritten-notes" class="page">
+            <a href="#tutorials-hub" class="back-btn">⬅ Back to Tutorials Menu</a>
+            <div class="glass-card">
+                <h2>✍️ Handwritten Notes — WebLearnx</h2>
+                <p>Select <strong>View Virtual Handwritten</strong> for interactive ruled notebook sheets with a built-in highlighter, or click <strong>Original Handwritten</strong> to directly view the PDF.</p>
+
+                <!-- Two Primary Mode Option Cards -->
+                <div class="hw-mode-grid">
+                    <button type="button" class="hw-mode-card active" id="modeBtnVirtual" onclick="switchHandwrittenMode('virtual')">
+                        <div class="hw-mode-icon">📓</div>
+                        <div class="hw-mode-info">
+                            <span class="hw-mode-badge">Option 1</span>
+                            <h3>View Virtual Handwritten</h3>
+                            <p>Read Tutorials 1–5 &amp; Units 1–5 in ruled notebook style with ink switcher &amp; text highlighter.</p>
+                        </div>
+                    </button>
+
+                    <button type="button" class="hw-mode-card" id="modeBtnOriginal" onclick="switchHandwrittenMode('original')">
+                        <div class="hw-mode-icon">📄</div>
+                        <div class="hw-mode-info">
+                            <span class="hw-mode-badge accent">Option 2</span>
+                            <h3>Original Handwritten</h3>
+                            <p>Click to directly open and read the Original Handwritten Notes PDF.</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- ========== OPTION 1: VIEW VIRTUAL HANDWRITTEN ========== -->
+                <div id="hwVirtualPanel" class="hw-panel active">
+                    <div class="hw-toolbar">
+                        <div class="hw-tabs" id="hwTabs">
+                            <button type="button" class="hw-tab active" data-source="tut1" onclick="selectHandwrittenSource('tut1')">Tutorial 1</button>
+                            <button type="button" class="hw-tab" data-source="tut2" onclick="selectHandwrittenSource('tut2')">Tutorial 2</button>
+                            <button type="button" class="hw-tab" data-source="tut3" onclick="selectHandwrittenSource('tut3')">Tutorial 3</button>
+                            <button type="button" class="hw-tab" data-source="tut4" onclick="selectHandwrittenSource('tut4')">Tutorial 4</button>
+                            <button type="button" class="hw-tab" data-source="tut5" onclick="selectHandwrittenSource('tut5')">Tutorial 5</button>
+                            <button type="button" class="hw-tab" data-source="unit1" onclick="selectHandwrittenSource('unit1')">Unit 1</button>
+                            <button type="button" class="hw-tab" data-source="unit2" onclick="selectHandwrittenSource('unit2')">Unit 2</button>
+                            <button type="button" class="hw-tab" data-source="unit3" onclick="selectHandwrittenSource('unit3')">Unit 3</button>
+                            <button type="button" class="hw-tab" data-source="unit4" onclick="selectHandwrittenSource('unit4')">Unit 4</button>
+                            <button type="button" class="hw-tab" data-source="unit5" onclick="selectHandwrittenSource('unit5')">Unit 5</button>
+                        </div>
+                        <div class="hw-controls">
+                            <div class="hw-pen-group" role="group" aria-label="Pen and Pencil Selector">
+                                <button type="button" class="hw-ctrl-btn tool-active" data-tool="ink-blue" onclick="setWritingTool('ink-blue', this)">🖊️ Blue Pen</button>
+                                <button type="button" class="hw-ctrl-btn" data-tool="ink-black" onclick="setWritingTool('ink-black', this)">🖊️ Black Pen</button>
+                                <button type="button" class="hw-ctrl-btn" data-tool="ink-purple" onclick="setWritingTool('ink-purple', this)">🖊️ Purple Pen</button>
+                                <button type="button" class="hw-ctrl-btn" data-tool="pencil-hb" onclick="setWritingTool('pencil-hb', this)">✏️ HB Pencil</button>
+                                <button type="button" class="hw-ctrl-btn" data-tool="pencil-2b" onclick="setWritingTool('pencil-2b', this)">✏️ 2B Pencil</button>
+                            </div>
+                            <button type="button" class="hw-ctrl-btn" onclick="window.print()">🖨️ Print</button>
+                        </div>
+                    </div>
+
+                    <!-- Highlighter & Eraser Bar -->
+                    <div class="hw-highlighter-bar">
+                        <button type="button" class="hw-ctrl-btn" id="hwHighlighterToggle" onclick="toggleHighlighterMode()">🖍️ Highlighter: OFF</button>
+                        <div class="hw-color-swatches" aria-label="Highlighter Colors">
+                            <button type="button" class="hl-swatch active" data-color="yellow" style="background:#fef08a;" title="Yellow Highlighter" onclick="setHighlighterColor('yellow', this)"></button>
+                            <button type="button" class="hl-swatch" data-color="green" style="background:#bbf7d0;" title="Green Highlighter" onclick="setHighlighterColor('green', this)"></button>
+                            <button type="button" class="hl-swatch" data-color="pink" style="background:#fbcfe8;" title="Pink Highlighter" onclick="setHighlighterColor('pink', this)"></button>
+                            <button type="button" class="hl-swatch" data-color="blue" style="background:#bae6fd;" title="Blue Highlighter" onclick="setHighlighterColor('blue', this)"></button>
+                        </div>
+                        <button type="button" class="hw-ctrl-btn" id="hwEraserToggle" onclick="toggleEraserMode()">🧽 Remove Highlighter: OFF</button>
+                        <button type="button" class="hw-ctrl-btn" onclick="clearCurrentHighlights()" style="margin-left:auto;">🧹 Clear All Highlights</button>
+                        <div class="hw-hl-hint" id="hwHlHint" style="width:100%;">Tip: Turn ON Highlighter and drag over text to mark it (handwriting stays unchanged). Turn ON Remove Highlighter and click any highlight to erase it.</div>
+                    </div>
+
+                    <div id="hwNotebookPaper" class="notebook-paper ink-blue">
+                        <div class="notebook-header">
+                            <div><strong>Name:</strong> Saket Kumar &nbsp;|&nbsp; <strong>QID:</strong> 24031053</div>
+                            <div><strong>Subject:</strong> Web Technology (CS35302) &nbsp;|&nbsp; <strong>Portal:</strong> WebLearnx</div>
+                        </div>
+                        <div id="hwNotebookBody" class="notebook-body"></div>
+                    </div>
+                </div>
+
+                <!-- ========== OPTION 2: ORIGINAL HANDWRITTEN (DIRECT PDF VIEWER) ========== -->
+                <div id="hwOriginalPanel" class="hw-panel" style="display:none;">
+                    <div class="orig-pdf-bar">
+                        <strong style="color: var(--primary);">📄 Original Handwritten Notes (PDF)</strong>
+                        <a id="origPdfNewTabLink" href="#" target="_blank" rel="noopener noreferrer" class="handwritten-cta-btn" style="padding: 9px 18px; font-size: 0.9rem;">↗ Open PDF in New Tab</a>
+                    </div>
+                    <div id="origPdfContainer" class="orig-pdf-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ASSIGNMENTS ================= -->
+        <div id="assignments" class="page">
+            <div id="assign-dashboard" class="assignment-dashboard">
+                <h2>LMS Assignments Portal</h2>
+                <p>Complete all questions before submitting. Click <strong>View Results</strong> after submission to see your marks and answers.</p>
+                <div class="assignment-item">
+                    <div class="assign-info">
+                        <h3>Assignment 1: Frontend Basics</h3>
+                        <div class="assign-meta"><span>Marks: 5</span><span>HTML &amp; CSS</span><span class="status-badge status-pending" id="status-badge-1">Pending</span></div>
+                    </div>
+                    <button class="assign-btn" id="btn-start-assign-1" onclick="openAssignment(1)">Start Assignment</button>
+                </div>
+                <div class="assignment-item">
+                    <div class="assign-info">
+                        <h3>Assignment 2: JavaScript &amp; DOM</h3>
+                        <div class="assign-meta"><span>Marks: 5</span><span>JS, Events, DOM</span><span class="status-badge status-pending" id="status-badge-2">Pending</span></div>
+                    </div>
+                    <button class="assign-btn" id="btn-start-assign-2" onclick="openAssignment(2)">Start Assignment</button>
+                </div>
+            </div>
+            <!-- Assignment Candidate Registration Modal -->
+            <div id="assignCandidateModal" class="search-modal" aria-hidden="true">
+                <div class="search-modal-card cbt-cand-modal-card">
+                    <div style="text-align:center; margin-bottom:18px;">
+                        <span class="cbt-exam-tag">ASSIGNMENT REGISTRATION</span>
+                        <h3 style="margin:12px 0 6px; color:var(--primary); font-size:1.45rem;">Enter Student Details</h3>
+                        <p style="margin:0; font-size:0.92rem; color:var(--text-muted);">Enter your name to receive your random Roll Number and start the assignment.</p>
+                    </div>
+
+                    <div class="cbt-reg-field">
+                        <label for="assignCandidateNameInput">Student Full Name <span style="color:#ef4444;">*</span></label>
+                        <input type="text" id="assignCandidateNameInput" placeholder="Enter your full name (e.g., Saket Kumar)" autocomplete="name">
+                        <div id="assignNameError" class="cbt-name-error" style="display:none;">⚠️ Please enter your name before starting the assignment.</div>
+                    </div>
+
+                    <div class="cbt-reg-field">
+                        <label>Assigned Random Roll Number</label>
+                        <div class="cbt-roll-display-row">
+                            <strong id="assignGeneratedRollNo">WLX-ASG-000000</strong>
+                            <button type="button" class="hw-ctrl-btn" onclick="generateAssignRollNo()" title="Generate a new random Roll No.">🔄 New Roll No.</button>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; gap:12px; justify-content:center; margin-top:22px; flex-wrap:wrap;">
+                        <button type="button" class="quiz-btn cbt-btn-secondary" onclick="closeAssignCandidateModal()">Cancel</button>
+                        <button type="button" class="quiz-btn" onclick="confirmAssignCandidateAndOpen()">Start Assignment 🚀</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="assign-runner" class="assignment-runner">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+                    <button type="button" class="back-btn" style="margin-bottom:0;" onclick="closeAssignment()">⬅ Back to Dashboard</button>
+                    <div id="assignStudentStrip" class="assign-student-strip" style="display:none;">
+                        <span>👤 <strong id="assignStudentNameDisplay">Student</strong></span>
+                        <span style="opacity:0.45;">|</span>
+                        <span>🆔 Roll No: <strong id="assignStudentRollDisplay" style="color:var(--primary); font-family:Consolas,monospace;">---</strong></span>
+                    </div>
+                </div>
+                <h2 id="assign-title">Loading...</h2>
+                <div id="assign-error-box" class="assign-error-box"></div>
+                <div id="assign-submitted-box" class="assign-submitted-box">
+                    <h3>✔ Assignment Submitted Successfully!</h3>
+                    <p>Your answers have been recorded. Click <strong>View Results</strong> to see your marks and detailed answers.</p>
+                    <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:18px;">
+                        <button class="assign-btn" onclick="viewAssignmentResults(currentAssignmentId)">View Results 📊</button>
+                        <button class="assign-btn" style="background:var(--glass-bg); color:var(--text-main); border:1px solid var(--glass-border);" onclick="closeAssignment()">Back to Dashboard</button>
+                    </div>
+                </div>
+                <div id="assign-result-box" class="assign-result-box"></div>
+                <div id="assign-questions-container"></div>
+                <div id="assign-submit-wrapper" style="text-align:center; margin-top:25px;">
+                    <button class="assign-btn" style="width:100%; max-width:300px; padding:14px;" onclick="gradeAssignment()">Submit Assignment</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PRACTICE MODE (AUTHENTIC CBT INTERFACE) ================= -->
+        <div id="practice" class="page">
+
+            <!-- 1. CBT Exam Lobby / Pre-Test Instructions -->
+            <div id="quiz-intro" class="cbt-lobby">
+                <div class="cbt-lobby-header">
+                    <div class="cbt-candidate-card">
+                        <div class="cbt-avatar" id="lobbyAvatar">WL</div>
+                        <div>
+                            <div class="cbt-cand-name" id="lobbyCandName">Candidate Verification Required</div>
+                            <div class="cbt-cand-meta" id="lobbyCandMeta">Enter your name on Start Test to receive your random Roll No. &nbsp;|&nbsp; CS35302</div>
+                        </div>
+                    </div>
+                    <div class="cbt-exam-tag">CS35302 • CBT PORTAL</div>
+                </div>
+
+                <div class="cbt-lobby-grid">
+                    <!-- Left: Exam Configuration -->
+                    <div class="cbt-config-panel">
+                        <h2 style="margin-bottom:14px;">Interactive Practice Mode</h2>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Configure your Web Technology (CS35302) computer-based test just like an official university online exam.</p>
+
+                        <div class="cbt-field-group">
+                            <label class="cbt-label">1. Select Syllabus Scope</label>
+                            <div class="cbt-chip-group" id="cbtScopeGroup">
+                                <button type="button" class="cbt-chip active" data-scope="all" onclick="selectCbtScope('all', this)">All 5 Units (25 Qs)</button>
+                                <button type="button" class="cbt-chip" data-scope="Unit 1" onclick="selectCbtScope('Unit 1', this)">Unit 1 (5 Qs)</button>
+                                <button type="button" class="cbt-chip" data-scope="Unit 2" onclick="selectCbtScope('Unit 2', this)">Unit 2 (5 Qs)</button>
+                                <button type="button" class="cbt-chip" data-scope="Unit 3" onclick="selectCbtScope('Unit 3', this)">Unit 3 (5 Qs)</button>
+                                <button type="button" class="cbt-chip" data-scope="Unit 4" onclick="selectCbtScope('Unit 4', this)">Unit 4 (5 Qs)</button>
+                                <button type="button" class="cbt-chip" data-scope="Unit 5" onclick="selectCbtScope('Unit 5', this)">Unit 5 (5 Qs)</button>
+                            </div>
+                        </div>
+
+                        <div class="cbt-field-group">
+                            <label class="cbt-label">2. Select Test Mode</label>
+                            <div class="cbt-chip-group" id="cbtModeGroup">
+                                <button type="button" class="cbt-chip active" data-mode="practice" onclick="selectCbtMode('practice', this)">⚡ Practice Mode (Instant Feedback + Fireworks)</button>
+                                <button type="button" class="cbt-chip" data-mode="exam" onclick="selectCbtMode('exam', this)">🎓 Real CBT Exam (Results After Submit)</button>
+                            </div>
+                        </div>
+
+                        <div class="cbt-field-group">
+                            <label class="cbt-label">3. Select Time Limit</label>
+                            <div class="cbt-chip-group" id="cbtTimeGroup">
+                                <button type="button" class="cbt-chip" data-time="300" onclick="selectCbtTime(300, this)">⏱️ 5 Minutes</button>
+                                <button type="button" class="cbt-chip active" data-time="600" onclick="selectCbtTime(600, this)">⏱️ 10 Minutes</button>
+                                <button type="button" class="cbt-chip" data-time="900" onclick="selectCbtTime(900, this)">⏱️ 15 Minutes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Official Instructions & Legend -->
+                    <div class="cbt-instructions-panel">
+                        <h3 style="margin-top:0; color:var(--primary);">📋 General Exam Instructions</h3>
+                        <ul class="cbt-inst-list">
+                            <li><strong>Candidate Verification:</strong> Clicking Start Test will ask for your <strong>Name</strong> and assign a unique <strong>Random Roll No.</strong></li>
+                            <li><strong>2 Chances Per Question:</strong> Each question gives <strong>2 attempts</strong>. Correct on 1st try = <strong>+1 Mark</strong>; correct on 2nd try = <strong>+0.5 Mark</strong>; after 2nd attempt, the question locks permanently so progress stays honest.</li>
+                            <li>Each correct answer carries <strong>+1 mark</strong> with <strong>no negative marking</strong>.</li>
+                            <li>The countdown timer runs at the top-right and <strong>auto-submits</strong> at <code>00:00</code>.</li>
+                        </ul>
+
+                        <div class="cbt-legend-box">
+                            <div class="cbt-legend-title">Question Palette Color Guide</div>
+                            <div class="cbt-legend-grid">
+                                <div class="cbt-legend-item"><span class="pal-dot pal-answered"></span> Answered / Correct</div>
+                                <div class="cbt-legend-item"><span class="pal-dot pal-viewed"></span> Viewed / Skipped</div>
+                                <div class="cbt-legend-item"><span class="pal-dot pal-marked"></span> Marked for Review</div>
+                                <div class="cbt-legend-item"><span class="pal-dot pal-unviewed"></span> Not Visited</div>
+                            </div>
+                        </div>
+
+                        <label class="cbt-declare-row">
+                            <input type="checkbox" id="cbtDeclareCheck" checked>
+                            <span>I understand each question allows a maximum of 2 chances and locks after the 2nd attempt.</span>
+                        </label>
+
+                        <button type="button" class="cbt-start-btn" onclick="openCandidateModal()">I am ready to begin — Start Test</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1B. Candidate Name & Random Roll No. Modal -->
+            <div id="cbtCandidateModal" class="search-modal" aria-hidden="true">
+                <div class="search-modal-card cbt-cand-modal-card">
+                    <div style="text-align:center; margin-bottom:18px;">
+                        <span class="cbt-exam-tag">CANDIDATE REGISTRATION</span>
+                        <h3 style="margin:12px 0 6px; color:var(--primary); font-size:1.45rem;">Enter Candidate Details</h3>
+                        <p style="margin:0; font-size:0.92rem; color:var(--text-muted);">Please enter your name to generate your official exam session and Roll Number.</p>
+                    </div>
+
+                    <div class="cbt-reg-field">
+                        <label for="cbtCandidateNameInput">Candidate Full Name <span style="color:#ef4444;">*</span></label>
+                        <input type="text" id="cbtCandidateNameInput" placeholder="Enter your full name (e.g., Saket Kumar)" autocomplete="name">
+                        <div id="cbtNameError" class="cbt-name-error" style="display:none;">⚠️ Please enter your name before starting the test.</div>
+                    </div>
+
+                    <div class="cbt-reg-field">
+                        <label>Assigned Random Roll Number</label>
+                        <div class="cbt-roll-display-row">
+                            <strong id="cbtGeneratedRollNo">WLX-2026-0000</strong>
+                            <button type="button" class="hw-ctrl-btn" onclick="generateRandomRollNo()" title="Generate a new random Roll No.">🔄 New Roll No.</button>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; gap:12px; justify-content:center; margin-top:22px; flex-wrap:wrap;">
+                        <button type="button" class="quiz-btn cbt-btn-secondary" onclick="closeCandidateModal()">Cancel</button>
+                        <button type="button" class="quiz-btn" onclick="confirmCandidateAndStart()">Start Exam Now 🚀</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Live CBT Exam Workspace -->
+            <div id="quiz-wrapper" class="cbt-workspace" style="display:none;">
+                <!-- Top CBT Header Bar -->
+                <div class="cbt-topbar">
+                    <div class="cbt-topbar-left">
+                        <span class="cbt-live-dot"></span>
+                        <strong>Web Technology (CS35302)</strong>
+                        <span class="cbt-mode-pill" id="cbtModePill">PRACTICE MODE</span>
+                    </div>
+                    <div class="cbt-topbar-right">
+                        <div class="cbt-timer-box" id="cbtTimerBox">
+                            <span style="font-size:0.78rem; color:var(--text-muted); text-transform:uppercase;">Time Left</span>
+                            <strong id="timer-display">10:00</strong>
+                        </div>
+                        <button type="button" class="hw-ctrl-btn" onclick="toggleCbtFullscreen()" title="Toggle Fullscreen Exam Mode">⛶ Fullscreen</button>
+                    </div>
+                </div>
+
+                <!-- Main Split Layout -->
+                <div class="quiz-split">
+                    <!-- Left: Question Paper Area -->
+                    <div class="quiz-main">
+                        <div class="cbt-q-meta-bar">
+                            <div class="cbt-q-meta-left">
+                                <span class="cbt-q-num-badge" id="cbtQNumBadge">Question 1 of 25</span>
+                                <span class="cbt-unit-badge" id="cbtUnitBadge">UNIT 1</span>
+                                <span class="cbt-marks-badge">+1 (1st) / +0.5 (2nd) • 2 Chances</span>
+                            </div>
+                            <div class="cbt-q-meta-right">
+                                <span class="attempt-display" id="attempt-display">Status: Open</span>
+                                <span class="cbt-qtime-pill" id="cbtQTimeDisplay">⏱ 00:00</span>
+                            </div>
+                        </div>
+
+                        <div id="quiz-status-msg" class="quiz-status" style="color:var(--text-muted);">Select an option carefully — once clicked, your answer is locked!</div>
+
+                        <div class="glass-card cbt-question-card">
+                            <h3 id="question-text" class="cbt-q-stem">Loading Question...</h3>
+                            <div id="options-container" class="cbt-options-list"></div>
+
+                            <!-- Instant Explanation Box (Shown in Practice Mode after locking answer) -->
+                            <div id="cbtExplanationBox" class="cbt-explanation-box" style="display:none;"></div>
+
+                            <div class="quiz-nav cbt-action-bar">
+                                <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                                    <button type="button" class="quiz-btn cbt-btn-secondary" id="btn-prev" onclick="changeQuestion(-1)">⬅ Previous</button>
+                                    <span class="cbt-lock-note" id="cbtLockNote">🎯 Chances Left: 2 / 2</span>
+                                </div>
+                                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                                    <button type="button" class="quiz-btn btn-mark" id="btn-mark" onclick="toggleMark()">🔖 Mark for Review</button>
+                                    <button type="button" class="quiz-btn" id="btn-next" onclick="changeQuestion(1)">Next ➡</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Authentic CBT Sidebar -->
+                    <div class="quiz-sidebar cbt-sidebar">
+                        <div class="cbt-side-profile">
+                            <div class="cbt-avatar sm" id="cbtSideAvatar">SK</div>
+                            <div>
+                                <div style="font-weight:700; font-size:0.95rem;" id="cbtSideName">Candidate</div>
+                                <div style="font-size:0.78rem; color:var(--primary); font-family:Consolas, monospace;" id="cbtSideRoll">Roll No: ---</div>
+                            </div>
+                        </div>
+
+                        <div class="cbt-counter-grid">
+                            <div class="cbt-count-item"><span class="pal-dot pal-answered"></span><strong id="cntAnswered">0</strong><small>Answered</small></div>
+                            <div class="cbt-count-item"><span class="pal-dot pal-viewed"></span><strong id="cntViewed">0</strong><small>Skipped</small></div>
+                            <div class="cbt-count-item"><span class="pal-dot pal-marked"></span><strong id="cntMarked">0</strong><small>Marked</small></div>
+                            <div class="cbt-count-item"><span class="pal-dot pal-unviewed"></span><strong id="cntUnviewed">0</strong><small>Unvisited</small></div>
+                        </div>
+
+                        <div class="cbt-palette-title">Question Palette</div>
+                        <div class="palette-grid" id="palette-grid"></div>
+
+                        <button type="button" class="quiz-btn cbt-submit-btn" onclick="openSubmitModal()">Submit Exam ✔</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Submit Confirmation Modal -->
+            <div id="cbtSubmitModal" class="search-modal" aria-hidden="true">
+                <div class="search-modal-card" style="max-width:480px; text-align:center; padding:28px;">
+                    <h3 style="margin-top:0; color:var(--primary); font-size:1.45rem;">Submit Exam Confirmation</h3>
+                    <p style="color:var(--text-muted); margin-bottom:18px;">Are you sure you want to submit your Web Technology (CS35302) test?</p>
+                    <div id="cbtModalSummary" class="cbt-modal-summary"></div>
+                    <div style="display:flex; gap:12px; justify-content:center; margin-top:22px; flex-wrap:wrap;">
+                        <button type="button" class="quiz-btn cbt-btn-secondary" onclick="closeSubmitModal()">Resume Test</button>
+                        <button type="button" class="quiz-btn" style="background:#ef4444; color:#fff;" onclick="confirmFinalSubmit()">Confirm &amp; Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Comprehensive Post-Exam Analytics Report -->
+            <div class="glass-card cbt-report-wrapper" id="quiz-report" style="display:none;"></div>
+        </div>
+
+        <!-- ================= WEBSITE FEATURES & DETAILED DIAGRAMS PAGE ================= -->
+        <div id="features" class="page">
+            <a href="#home" class="back-btn">⬅ Back to Home</a>
+
+            <div class="glass-card">
+                <h2>✨ All <span class="text-gradient">WebLearnx</span> Features — Detailed Guide &amp; Diagrams</h2>
+                <p>Explore how every module, tool, and exam engine inside <strong>WebLearnx (CS35302)</strong> works together. Below are detailed architectural diagrams and complete explanations of all platform features.</p>
+
+                <!-- DIAGRAM 1: MASTER SYSTEM ARCHITECTURE -->
+                <h3>1. Complete WebLearnx System Architecture Diagram</h3>
+                <div class="arch-diagram-wrapper">
+                    <div class="arch-diagram-header">Master Portal Architecture &amp; User Journey</div>
+
+                    <div class="arch-tier">
+                        <div class="arch-box entry">
+                            <span class="arch-box-step">Layer 1 • Entry &amp; Personalization</span>
+                            <strong>WebLearnx Smart Dashboard</strong>
+                            <small>Shining Hero • Live IST Clock • Study Progress Tracker (0–10) • Dark / Bright Theme</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Instant Hash Navigation &nbsp; ▼</div>
+
+                    <div class="arch-tier">
+                        <div class="arch-box">
+                            <span class="arch-box-step">Study Module 1</span>
+                            <strong>🗺️ Official Syllabus</strong>
+                            <small>5 Units (36 Hours) • Direct Jump Links to Every Unit</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Study Module 2</span>
+                            <strong>📘 Unit 1–5 Notes</strong>
+                            <small>Exam-Ready English • Built-in Protocol &amp; Architecture Diagrams</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Study Module 3</span>
+                            <strong>📝 Tutorials 1–5</strong>
+                            <small>100% Uncompressed Q&amp;A • Comparison Tables • Copyable Code</small>
+                        </div>
+                        <div class="arch-box">
+                            <span class="arch-box-step">Study Module 4</span>
+                            <strong>✍️ Handwritten Studio</strong>
+                            <small>Virtual Ruled Notebook (Pens/Pencils + Highlighter) &amp; Original PDF</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Evaluation &amp; Honest Progress Tracking &nbsp; ▼</div>
+
+                    <div class="arch-tier">
+                        <div class="arch-box accent-box" style="max-width: 380px;">
+                            <span class="arch-box-step">Evaluation 1</span>
+                            <strong>🎯 LMS Assignments</strong>
+                            <small>Student Name + Random Roll No. • All-Question Validation • Deferred Result Reveal</small>
+                        </div>
+                        <div class="arch-box accent-box" style="max-width: 380px;">
+                            <span class="arch-box-step">Evaluation 2</span>
+                            <strong>🔥 2-Chance CBT Exam</strong>
+                            <small>25 Unit-Wise MCQs • Candidate Roll No. • Live Palette • +1 / +0.5 / 0 Scoring</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">▼ &nbsp; Mastery &amp; Revision Output &nbsp; ▼</div>
+
+                    <div class="arch-tier">
+                        <div class="arch-box green-box">
+                            <span class="arch-box-step">Final Output</span>
+                            <strong>📊 Official Score Card, Unit Bars &amp; Quick Revision</strong>
+                            <small>True Accuracy % • 1st vs 2nd Try Breakdown • 3D Flip Flashcards • 8-Mark Blueprint</small>
+                        </div>
+                    </div>
+
+                    <div class="arch-toolkit-strip">
+                        <strong>Global Always-On Layer:</strong> ▾ Hover-Open More Menu &nbsp;•&nbsp; 🔍 Ctrl+K Search &nbsp;•&nbsp; 🔄 Full Account Reset &nbsp;•&nbsp; 🍅 Pomodoro &nbsp;•&nbsp; 🔊 Read-Aloud TTS &nbsp;•&nbsp; A-/A+ Font Scaling
+                    </div>
+                </div>
+
+                <!-- DIAGRAM 2: HANDWRITTEN NOTES STUDIO WORKFLOW -->
+                <h3>2. Dual Handwritten Notes Studio — Workflow Diagram</h3>
+                <div class="arch-diagram-wrapper">
+                    <div class="arch-diagram-header">How Virtual Handwritten &amp; Original Handwritten Modes Work</div>
+                    <div class="arch-tier">
+                        <div class="arch-box entry" style="max-width: 380px;">
+                            <span class="arch-box-step">Handwritten Notes Hub</span>
+                            <strong>Choose Study Format</strong>
+                            <small>Switch anytime between Virtual Notebook &amp; Original PDF</small>
+                        </div>
+                    </div>
+                    <div class="arch-connector">↙ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↘</div>
+                    <div class="arch-tier">
+                        <div class="arch-box" style="max-width: 440px;">
+                            <span class="arch-box-step">Option 1 • Virtual Handwritten</span>
+                            <strong>📓 Interactive Ruled Notebook</strong>
+                            <small>Load Tutorials 1–5 or Units 1–5 → Pick Tool (Blue/Black/Purple Pen, HB/2B Pencil) → Drag to Highlight (4 Colors, font stays intact) → Remove Highlighter Eraser → Auto-Saved &amp; Print-Ready</small>
+                        </div>
+                        <div class="arch-box accent-box" style="max-width: 440px;">
+                            <span class="arch-box-step">Option 2 • Original Handwritten</span>
+                            <strong>📄 Direct PDF Viewer</strong>
+                            <small>Reads <code>ORIGINAL_HANDWRITTEN_PDF_LINK</code> → Auto-converts Google Drive links to embeddable preview → Displays full-height PDF + Open in New Tab button</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIAGRAM 3: 2-CHANCE CBT EXAM & SCORING LOGIC -->
+                <h3>3. Honest 2-Chance CBT Exam &amp; Scoring Flow Diagram</h3>
+                <div class="arch-diagram-wrapper">
+                    <div class="arch-diagram-header">Candidate Verification &amp; 2-Chance Anti-Guessing Logic</div>
+                    <div class="flow-row" style="margin-bottom: 16px;">
+                        <div class="flow-node">1. Enter Name<br><small>Random Roll No.</small></div>
+                        <div class="flow-arrow">▶</div>
+                        <div class="flow-node">2. Pick Scope &amp; Timer<br><small>All 25 Qs or Unit 1–5</small></div>
+                        <div class="flow-arrow">▶</div>
+                        <div class="flow-node accent">3. Attempt Question<br><small>2 Chances Max</small></div>
+                    </div>
+                    <div class="arch-tier">
+                        <div class="arch-box green-box" style="max-width: 280px;">
+                            <span class="arch-box-step">1st Try Correct</span>
+                            <strong>✔ +1.0 Mark</strong>
+                            <small>Fireworks + Explanation + Question Locks Immediately</small>
+                        </div>
+                        <div class="arch-box accent-box" style="max-width: 280px;">
+                            <span class="arch-box-step">1st Wrong → 2nd Correct</span>
+                            <strong>✔ +0.5 Mark</strong>
+                            <small>1st wrong option disabled • 2nd try earns half credit &amp; locks</small>
+                        </div>
+                        <div class="arch-box" style="max-width: 280px; border-color: #ef4444; background: rgba(239, 68, 68, 0.12);">
+                            <span class="arch-box-step" style="color:#ef4444;">2nd Try Wrong</span>
+                            <strong>✘ 0 Marks (Locked)</strong>
+                            <small>Permanently locked • Correct answer &amp; explanation shown</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COMPLETE DETAILED FEATURE EXPLANATIONS -->
+                <h3>4. Complete Feature-by-Feature Breakdown</h3>
+                <div class="feature-explain-grid">
+                    <div class="feature-explain-item">
+                        <h4>🗺️ Official CS35302 Syllabus</h4>
+                        <p>Displays the official Quantum University 5th-semester B.Tech CSE Web Technology syllabus (36 hours across 5 units) with metadata cards and one-click jump buttons to every unit's notes.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>📘 Visual Unit 1–5 Notes</h4>
+                        <p>Structured exam-ready notes with technical definitions, comparison tables, code blocks, and visual flow diagrams (HTTP Cycle, Email Protocols, DNS, CSS Box Model, DOM Tree, Web Service Architecture, SOAP, AJAX, CORBA, MVC, RDF, Blockchain, IoT).</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>📝 100% Uncompressed Tutorials 1–5</h4>
+                        <p>Every solved tutorial question with full explanations, side-by-side comparison tables, working HTML/CSS/JS/XML/AJAX code snippets with one-click <strong>Copy</strong> buttons, and exam-ready conclusions.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>✍️ Handwritten Notes Studio</h4>
+                        <p>Features both <strong>Virtual Handwritten</strong> (ruled paper, 3 pens + 2 pencils, 4-color text highlighter that preserves handwriting font, dedicated Remove Highlighter eraser, and Print Sheet) and <strong>Original Handwritten</strong> (direct PDF viewer).</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🎯 LMS Assignments Portal</h4>
+                        <p>Asks for Student Name and assigns a random Roll Number (<code>WLX-ASG-XXXXXX</code>) before starting, validates that all questions are answered before submission, and unlocks marks, grade, and answer breakdown on clicking View Results.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔥 2-Chance CBT Practice Mode</h4>
+                        <p>Authentic university CBT interface with Candidate Name + Random Roll No. (<code>WLX-26-XXXXXX</code>), 25 MCQs, Practice &amp; Real Exam modes, fullscreen toggle, keyboard shortcuts (<code>1–4</code>, <code>←/→</code>), color-coded Question Palette, and Score Card analytics.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>⚡ Quick Revision &amp; 3D Flashcards</h4>
+                        <p>Last-minute exam hub containing 22 comparison topics, 34 essential full forms, the 8-mark answer blueprint, recommended study sequence, and 12 interactive 3D flip-cards with Shuffle.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔍 Global Instant Search (Ctrl+K)</h4>
+                        <p>Indexes headings and full content across all Units, Tutorials, Syllabus, Handwritten Notes, and Revision pages so you can jump to any protocol or concept in milliseconds.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🍅 Floating Study Toolkit</h4>
+                        <p>Always-accessible bottom-right bar with a 25m/5m Pomodoro study timer, browser Text-to-Speech Read Aloud, <code>A-</code> / <code>A+</code> font size scaling, and a smooth Back-to-Top button.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>📈 Study Tracker, IST Clock &amp; Hover More Menu</h4>
+                        <p>Mark any Unit or Tutorial as Completed to update your Home progress bar, check the live IST digital clock, toggle Dark / Bright mode, and hover over <strong>More ▾</strong> to auto-reveal extra tools without clicking.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🔄 Complete Account &amp; Dashboard Reset</h4>
+                        <p>Use the <strong>Reset Account</strong> button on the Dashboard or inside <strong>More ▾</strong> to open a confirmation dialog that cleanly resets Study Progress, LMS Assignments, CBT Practice scores &amp; Roll No., Handwritten highlights, Pomodoro, and display settings.</p>
+                    </div>
+                    <div class="feature-explain-item">
+                        <h4>🖍️ Safe Multi-Paragraph Text-Node Highlighter</h4>
+                        <p>Uses a DOM <code>TreeWalker</code> text-node highlighter so selecting single words or the entire handwritten sheet highlights cleanly in 4 colors without disarranging sentences or changing handwritten fonts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ABOUT ================= -->
+        <div id="about" class="page">
+            <div class="glass-card">
+                <h2>About <span class="text-gradient">Saket Kumar</span></h2>
+                <h3 style="margin-top:0;">Full-Stack Developer &amp; Tech Entrepreneur</h3>
+                <p><strong>University ID (QID):</strong> 24031053</p>
+                <p>Pursuing <strong>Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering</strong> at Quantum University, Roorkee (2024–2028)</p>
+                <p>This project is developed as part of the Web Technology – 5th Semester, Assignment 02, under the guidance of Assistant Professor Deepak Saini, 
+                    demonstrating practical knowledge of web development technologies and their real-world applications.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#home" class="footer-brand">WebLearnx</a>
+                <p class="footer-desc">A dedicated Web Technology (CS35302) learning &amp; exam-preparation platform featuring visual Unit 1–5 notes, handwritten &amp; typed tutorials, LMS assignments, and timed practice tests.</p>
+                <div class="footer-creator-badge">Crafted by <strong>Saket Kumar</strong> &nbsp;|&nbsp; QID: 24031053</div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Website Features &amp; Diagrams</a></li>
+                    <li><a href="#syllabus">Official Syllabus</a></li>
+                    <li><a href="#notes-hub">Unit 1–5 Notes</a></li>
+                    <li><a href="#tutorials-hub">Solved Tutorials</a></li>
+                    <li><a href="#handwritten-notes">Handwritten Tutorial Notes</a></li>
+                    <li><a href="#assignments">LMS Assignments</a></li>
+                    <li><a href="#practice">Timed Practice Mode</a></li>
+                    <li><a href="#about">About Saket Kumar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Academic Details</h4>
+                <ul class="footer-info-list">
+                    <li><strong>University:</strong> Quantum University, Roorkee</li>
+                    <li><strong>School:</strong> Quantum School of Technology</li>
+                    <li><strong>Department:</strong> Computer Science &amp; Engineering</li>
+                    <li><strong>Course:</strong> B.Tech CSE — 5th Semester</li>
+                    <li><strong>Subject:</strong> Web Technology (CS35302)</li>
+                    <li><strong>Session:</strong> 2026–2027 &nbsp;|&nbsp; <strong>Faculty:</strong> Assistant Professor Deepak Saini</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026–2027 <strong>WebLearnx</strong>. All Rights Reserved. Designed &amp; Developed by <strong>Saket Kumar</strong> (QID: 24031053).</p>
+        </div>
+    </footer>
+
+
+    <!-- Global Search Modal (Ctrl+K) -->
+    <div id="searchModal" class="search-modal" aria-hidden="true">
+        <div class="search-modal-card">
+            <div class="search-input-row">
+                <span style="font-size:1.2rem;">🔍</span>
+                <input type="text" id="globalSearchInput" placeholder="Search Units, Tutorials, Protocols (e.g., HTTP, DOM, AJAX, Blockchain, 5G)..." autocomplete="off">
+                <button class="hw-ctrl-btn" onclick="closeSearchModal()">ESC</button>
+            </div>
+            <div id="searchResultsList" class="search-results-list">
+                <div class="search-hint">Start typing to instantly search across all 5 Units, 5 Tutorials, Syllabus &amp; Revision notes.</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcutsModal" class="search-modal" aria-hidden="true">
+        <div class="search-modal-card" style="max-width: 520px; padding: 24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; border-bottom:1px solid var(--glass-border); padding-bottom:10px;">
+                <h3 style="margin:0; color:var(--primary); font-size:1.3rem;">⌨️ WebLearnx Keyboard Shortcuts</h3>
+                <button type="button" class="hw-ctrl-btn" onclick="closeShortcutsModal()">ESC</button>
+            </div>
+            <div class="shortcuts-list">
+                <div class="shortcut-row"><span>Open Global Instant Search</span><kbd>Ctrl + K</kbd></div>
+                <div class="shortcut-row"><span>Close Any Open Modal / Dropdown</span><kbd>Esc</kbd></div>
+                <div class="shortcut-row"><span>Select Option A / B / C / D (in CBT Exam)</span><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd></div>
+                <div class="shortcut-row"><span>Previous / Next Question (in CBT Exam)</span><kbd>←</kbd> <kbd>→</kbd></div>
+                <div class="shortcut-row"><span>Confirm Candidate Name Modal</span><kbd>Enter</kbd></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Full Account & Dashboard Reset Confirmation Modal -->
+    <div id="resetAccountModal" class="search-modal" aria-hidden="true">
+        <div class="search-modal-card" style="max-width: 480px; text-align: center; padding: 28px;">
+            <div style="font-size: 2.4rem; margin-bottom: 8px;">🔄</div>
+            <h3 style="margin: 0 0 8px; color: #ef4444; font-size: 1.45rem;">Reset Account &amp; All Data?</h3>
+            <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 16px;">
+                This will cleanly reset your entire <strong>WebLearnx</strong> session back to a fresh start:
+            </p>
+            <ul class="reset-checklist">
+                <li>📈 Home Dashboard Study Progress (0 / 10)</li>
+                <li>🎯 LMS Assignments (Scores, Status &amp; Student Info)</li>
+                <li>🔥 CBT Practice Mode (Candidate Name, Roll No. &amp; Test State)</li>
+                <li>🖍️ Handwritten Notes (All Highlights &amp; Pen/Pencil Tools)</li>
+                <li>⚙️ Display Settings (Dark Mode, Font Size &amp; Pomodoro)</li>
+            </ul>
+            <div style="display:flex; gap:12px; justify-content:center; margin-top:22px; flex-wrap:wrap;">
+                <button type="button" class="quiz-btn cbt-btn-secondary" onclick="closeResetAccountModal()">Cancel</button>
+                <button type="button" class="quiz-btn reset-confirm-btn" onclick="executeFullAccountReset()">Yes, Reset Everything</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sleek Toast Notification -->
+    <div id="weblearnxToast" class="wlx-toast" role="status" aria-live="polite"></div>
+
+    <!-- Floating Study Toolkit -->
+    <div class="floating-toolkit">
+        <div id="pomodoroPopup" class="pomodoro-popup" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <strong style="color:var(--primary);">🍅 Study Pomodoro</strong>
+                <button class="pomo-close" onclick="togglePomodoroPopup()">✕</button>
+            </div>
+            <div class="pomo-mode-tabs">
+                <button class="pomo-tab active" id="pomoFocusTab" onclick="setPomodoroMode('focus')">Focus 25m</button>
+                <button class="pomo-tab" id="pomoBreakTab" onclick="setPomodoroMode('break')">Break 5m</button>
+            </div>
+            <div class="pomo-time" id="pomoTimeDisplay">25:00</div>
+            <div style="display:flex; gap:8px; justify-content:center;">
+                <button class="hw-ctrl-btn" id="pomoStartBtn" onclick="togglePomodoroRun()">▶ Start</button>
+                <button class="hw-ctrl-btn" onclick="resetPomodoro()">🔄 Reset</button>
+            </div>
+        </div>
+
+        <div class="toolkit-buttons">
+            <button class="toolkit-btn" id="ttsBtn" onclick="toggleReadAloud()" title="Read Current Page Aloud">🔊</button>
+            <button class="toolkit-btn" onclick="adjustFontSize(-1)" title="Decrease Text Size">A-</button>
+            <button class="toolkit-btn" onclick="adjustFontSize(1)" title="Increase Text Size">A+</button>
+            <button class="toolkit-btn" onclick="togglePomodoroPopup()" title="Pomodoro Study Timer">🍅</button>
+            <button class="toolkit-btn" id="backToTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to Top" style="display:none;">⬆</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
